@@ -1,127 +1,167 @@
-"imap ii <Esc>
+  scriptencoding utf-8
 
-set autoindent
-set sw=2
-
-set guioptions-=t
-
-set expandtab
-set nocompatible
-set sm
-syntax on
-
-map s I  <Down>
-map S I<BS><BS><Down>
-map <S-Left> I<BS><BS>
-map <S-Right> I  
-
+" MAKE ARROW KEYS WORK IN CONSOLE VI
+  set term=xterm
   
-autocmd BufRead,BufNewFile *.rjs     set filetype=ruby
-autocmd BufRead,BufNewFile *.rxml    set filetype=ruby
-autocmd BufRead,BufNewFile *.rsel    set filetype=ruby
-set ruler
-set rulerformat=%l\/%L
+" Set temporary directory (don't litter local dir with swp/tmp files)
+  set directory=/tmp/
 
-set guioptions-=T
-set guioptions-=r
+" Color themes
+  colors twilight2
+
+" These two enable syntax highlighting
+  set nocompatible
+  syntax on
+  
+" have one hundred lines of command-line (etc) history:
+  set history=100
+
+" Show us the command we're typing
+  set showcmd
+
+" Highlight matching parens
+  set showmatch
+
+  set completeopt=menu,preview
+  
+" Use the cool tab complete menu
+  set wildmenu 
+  set wildmode=list:longest,full
+
+" have the mouse enabled all the time:
+  set mouse=a
+
+" * Text Formatting -- General
+
+" don't make it look like there are line breaks where there aren't:
+  set nowrap
+
+" use indents of 2 spaces, and have them copied down lines:
+  set expandtab
+  set tabstop=2
+  set softtabstop=2 
+  set shiftwidth=2
+
+  set autoindent
+  set smartindent
+  
+""Set to auto read when a file is changed from the outside
+  set autoread
+
+" * Search & Replace
+" show the `best match so far' as search strings are typed:
+  set incsearch
+
+" searching is case insensitive when all lowercase
+  set ignorecase
+  set smartcase
+ 
+" assume the /g flag on :s substitutions to replace all matches in a line:
+  set gdefault
+
+" enable line numbers
+  set number
+
+" If possible, try to use a narrow line number column.
+  if v:version >= 700
+      try
+        setlocal numberwidth=3
+      catch
+      endtry
+  endif
+
+" FILE BROWSING
+" Settings for explorer.vim
+  let g:explHideFiles='^\.'
+
+" Settings fo rnetrw
+  let g:netrw_list_hide='^\.,\~$'
 
 
-set wildmode=longest,list
+" TAB COMPLETION FOR AUTO COMPLETE
+  if has("eval")
+      function! CleverTab()
+          if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
+              return "\<Tab>"
+          else
+              return "\<C-N>"
+          endif
+      endfun
+      inoremap <Tab> <C-R>=CleverTab()<CR>
+      inoremap <S-Tab> <C-P>
+  endif
 
+" ENABLE THE TAB BAR
+  set tabline=%!MyTabLine()
+  set showtabline=2 " 2=always
 
-set autoindent
-set tabstop=2
-set sw=2
-set columns=120
-set lines=32
-set nowrap
+" MAKE BACKSPACE WORK IN INSERT MODE
+  set backspace=indent,eol,start
 
-set showtabline=2
+" REMEMBER LAST POSITION IN FILE
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
-set number
+" MAKE IT EASY TO UPDATE/RELOAD_vimrc 
+  :nmap ,s :source ~/.vimrc<cr>
+  :nmap ,v :tabe ~/.vimrc<cr>
+  
+" RSPEC
+  :nmap ,sh :! script/spec spec/helpers<cr>
+  :nmap ,sm :! script/spec spec/models<cr>
+  :nmap ,sv :! script/spec spec/views<cr>
+  :nmap ,sc :! script/spec spec/controllers<cr>
+  :nmap ,sf :! script/spec %<cr>
+  :nmap ,c  :! rake cruise<cr>  
 
-set backspace=2
+" exiting insert mode with command-i
+  :imap <D-i> <esc>
 
-set guioptions-=t
+" easy wrap toggling
+  :map <D-r> :set wrap<cr>
+  :map <D-R> :set nowrap<cr>
 
-set expandtab
-set nocompatible
-set sm
+" typing pound pound will print out the string interpolation characters and move the cusor in the middle
+  imap ## #{}<Left>
 
-set guifont=Inconsolata:h16
-set transp=7
+" typing percent percent will print out the erb output characters and move the cusor after the equals sign
+  imap %% <%=%><Left><Left>
 
-syntax on
+" make current word a symbol by prepending it with :
+  map :: bi:<Esc>
 
+" enclose curent word within double quotes
+  map "" bi"<Esc>ea"<Esc>
 
-imap %% <%=%><Left><Left>
+" enclose curent word within single quotes
+  map '' bi'<Esc>ea'<Esc>
 
+" convert curent singly or double quoted word into to a symbol
+  map ": bhr:elx
+  map ': bhr:elx
 
-map <S-Left> I<BS><BS>
-map <S-Right> I  
+" convert curent word as symbol into a double quoted string
+  map :" F:r"ea"<Esc>
 
+" convert curent word as symbol into a single quoted string
+  map :' F:r'ea'<Esc>
 
+  ""Nice statusbar
+  set laststatus=2
+  set statusline=\ "
+  set statusline+=%f\ " file name
+  set statusline+=[
+  set statusline+=%{strlen(&ft)?&ft:'none'}, " filetype
+  set statusline+=%{&fileformat}] " file format
 
-autocmd BufRead,BufNewFile *.rjs     set filetype=ruby
-autocmd BufRead,BufNewFile *.rxml    set filetype=ruby
+  set statusline+=%h%1*%m%r%w%0* " flag
+  set statusline+=%= " right align
+  set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
-colors freya
+  " title: update the title of the window?
+  set   title
 
-set suffixesadd=.rb
-set suffixesadd=.css
-set suffixesadd=.js
-set includeexpr+=substitute(v:fname,'s$','','g')
-" or you can add substitution pattern s/ies$/y/g, s/ves$/f/g like this:
-" set includeexpr+=substitute(substitute(substitute(v:fname,'s$','','g'),'ie$','y','g'),'ve$','f','g')
+  " titlestring: what will actually be displayed
+  set   titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
+  " Turn off rails bits of statusbar
+  let g:rails_statusline=0
 
-
-
-" custom tab stuff
-" tab navigation like safari
-" idea adopted from: http://www.vim.org/tips/tip.php?tip_id=1221
-"<apple-]>: Previous Tab
-:nmap <D-[> :tabprevious<cr>
-:map <D-[> :tabprevious<cr>
-:imap <D-[> <ESC>:tabprevious<cr>i<Right>
-
-"<apple-]>: Next Tab
-:nmap <D-]> :tabnext<cr>
-:map <D-]> :tabnext<cr>
-:imap <D-]> <ESC>:tabnext<cr>i<Right>
-
-"#<apple-t> : New Tab
-:nmap <D-t> :tabnew<cr>
-:imap <D-t> <ESC>:tabnew<cr>
-
-" make backspace always work
-set backspace=indent,eol,start
-
-" make project list persist across restarts
-set viminfo^=!
-
-vmap  # !ruby ~/.vim/toggle_comments.rb
-nmap  # V#
-
-hi LineNr guibg=#141414
-
-fun! FuckForLoopsErb()
-  %s/for \(\w*\) in \(.*\)%>/\2.each do |\1| %>/
-  %s/\s*.each/.each
-endfun
-
-fun! FuckForLoops()
-  %s/for \(\w*\) in \(.*\)/\2.each do |\1|/
-  %s/\s*.each/.each
-endfun
-
-fun! GotoDefaultWd()
-  let foo = ''
-  redir => foo
-  silent ! /Users/ehrenmurdick/bin/iterm_default_wd
-  redir END
-  let bar = split(foo, "\n")
-  execute 'cd ' . fnameescape(bar[1])
-  e app/controllers/application.rb
-endfun
-
-map <D-H> :call GotoDefaultWd()

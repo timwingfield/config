@@ -1,20 +1,37 @@
 # START: EXPORTS
-export PATH="/opt/local/lib/postgresql82/bin/:/usr/local/bin:/opt/local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/sw/bin:$HOME/bin:/opt/local/lib/postgresql83/bin"
+export PATH=/Library/Ruby/bin:/opt/local/bin:/Library/PostgreSQL8/bin:/opt/local/sbin:/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/:$PATH
 export GREP_OPTIONS='--color=auto' 
 export GREP_COLOR='3;33'
+export GEM_HOME=/Library/Ruby/Gems/1.8
+export GEM_PATH=/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8
+export EDITOR='mate -w'
+export PS1='%2/ ~ '
+export TERM=xterm-color
+export LSCOLORS=gxfxcxdxbxegedabagacad
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL=
+export MANPATH=/opt/local/share/man:$MANPATH
 # END: EXPORTS
 
-
-function load_pg_on_reboot () {
-  sudo launchctl load -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\/git:\1/'
+}
+parse_svn_branch() {
+  parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk -F / '{print "(svn:"$1 "/" $2 ")"}'
+}
+parse_svn_url() {
+  svn info 2>/dev/null | grep -e '^URL*' | sed -e 's#^URL: *\(.*\)#\1#g '
+}
+parse_svn_repository_root() {
+  svn info 2>/dev/null | grep -e '^Repository Root:*' | sed -e 's#^Repository Root: *\(.*\)#\1\/#g '
 }
 
-function cdproject { cd $HOME/projects/$* }
-compctl -W "$HOME/projects" -g '*(-/)' cdproject
-
-function unload_pg_on_reboot() {
-  sudo launchctl unload -w /Library/LaunchDaemons/org.macports.postgresql83-server.plist
-}
 
 # START RAKE COMPLETION (caching rake tasks per project directory, not globally)
 function _rake_does_task_list_need_generating () {
@@ -39,37 +56,16 @@ function _rake () {
 compctl -K _rake rake
 # ENDING RAKE COMPLETION
 
+function pr { cd $HOME/projects/$* }
+_pr() {
+  reply=( `ruby -e'puts Dir["#{ENV["HOME"]}/projects/*"].select {|f| File.directory?(f)}.collect {|d| File.basename(d)}'` )
+}
+compctl -K _pr pr
+
 # color module
 autoload colors ; colors	
-###########################################
-#   iTerm Tab and Title Customization     #
-###########################################
 
-# Put the string "hostname::/full/directory/path" in the title bar:
-set_iterm_title() { 
-	echo -ne "\e]2;$HOST:r:r::$PWD\a" 
-}
-
-# Put the parentdir/currentdir in the tab
-set_iterm_tab() {
-	echo -ne "\e]1;$PWD:h:t/$PWD:t\a" 
-}
-
-set_iterm_running_app() {
- printf "\e]1; $PWD:t:$(history $HISTCMD | cut -b7- ) \a"
-}
-
-precmd() { 
-	set_iterm_title
-	set_iterm_tab
-}
-preexec() { 
-  set_iterm_running_app
-}
-
-postexec() {
-  set_iterm_running_app
-}
+export PS1='%{$reset_color$fg[cyan]%}%1~%{$reset_color$bold_color$fg[green]%}%{$reset_color$fg[green]%}$(parse_git_branch)>%{$reset_color%} '
 
 # Keeps the paths from growing too big    
 typeset -U path manpath fpath
@@ -78,10 +74,13 @@ typeset -U path manpath fpath
 HISTSIZE=600
 SAVEHIST=600
 HISTFILE=~/.zsh_history
-setopt append_history 
-setopt inc_append_history 
+setopt APPEND_HISTORY 
+setopt INC_APPEND_HISTORY 
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
 
 # MISC CONFIG
+setopt prompt_subst
 setopt complete_in_word         # Not just at the end
 setopt always_to_end            # When complete from middle, move cursor
 setopt nohup										# In general, we don't kill background jobs upon logging out
@@ -114,6 +113,8 @@ function sudo {
 
      
 # ALIASES
+alias ocaml="rlwrap ocaml"
+alias ssh='/usr/bin/ssh'
 alias ls='ls -G'
 alias ll='ls -hl'
 alias tar='nocorrect /usr/bin/tar'
@@ -123,40 +124,32 @@ alias ri='ri -Tf ansi'
 alias rtasks='rake --tasks'
 alias sp='./script/spec -cfs'
 alias ss='./script/server'
+alias ss1='./script/server -p 3001'
+alias ss2='./script/server -p 3002'
 alias sc='./script/console'
+alias c='clear'
 alias cruise='svn up; rake cruise'
-alias vi='vim'
+alias vi='/opt/local/bin/vim'
 alias postgres_start='pg_ctl -D ~/.pgdata -l ~/.pgdata/psql.log start'
-alias vim='vim -p'
+alias vim='/opt/local/bin/vim -p'
 alias postgres_stop='pg_ctl -D ~/.pgdata stop'
 alias mysql='/opt/local/bin/mysql5 -u root --socket=/tmp/mysql.sock'
 alias mysqladmin='/opt/local/bin/mysqladmin5 -u root --socket=/tmp/mysql.sock'
 
+function mysqlredo {
+  mysqladmin drop $@
+  mysqladmin create $@
+  mysql $@
+}
+
+function grak {
+  mvim -p $(rak -l $@ | xargs)
+}
+
 alias ff='open -a FireFox'
 alias safari='open -a Safari'
-alias css='open -a CssEdit'
-
-function gvim { /Applications/MacVim.app/Contents/MacOS/Vim -g -p $* & } 
-
-compctl -g '*.(jpg|png|gif|tiff|jpeg|pdf)' preview
-compctl -g '*.psd' photoshop
-
-# AUTO EXECUTABLE EXTENSIONS
-# Set up auto extension stuff
-# alias -s rb=/opt/local/bin/ruby
-
-# EXPORT
-export EDITOR='mate -w'
-
-export TERM=xterm-color
-export LSCOLORS=gxfxcxdxbxegedabagacad 
-
-# KEY BINDINGS
-# emacs mode for keys
-#bindkey -e
-# vi mode for keys
-#bindkey -v
-
+alias gvim='mvim -p'
+alias gitdiff="git log|grep commit|awk '{print \$2}'|tail -n 2|xargs -n 2 git diff $1 $2|mate"
 
 bindkey '^K' kill-whole-line
 bindkey -s '^L' "|less\n"		# ctrl-L pipes to less
@@ -167,49 +160,3 @@ bindkey "\e[4~" end-of-line		# End (console)
 bindkey "\e[F" end-of-line		# End (xterm)
 bindkey "\e[2~" overwrite-mode		# Ins
 bindkey "\e[3~" delete-char		# Delete
-
-
-
-function gco () {
-  git co $*
-}
-
-function _gco () {
-  reply=(`git branch | ruby -lne 'puts $_.gsub("*", "").gsub(" ", "")'`)
-}
-compctl -K _gco gco
-
-
-# cd to the default working directory from iterm
-function cdefault { 
-  export wdir=`/Users/ehrenmurdick/bin/iterm_default_wd`
-  cd $wdir 
-}
-
-cdefault
-
-function svn_new () {
-  svn st | grep '^?' | awk '{print $2}'
-}
-
-git_prompt_info () {
- ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
- echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
-}
-
-project_name () {
-  name=$(pwd | awk -F'projects/' '{print $2}' | awk -F/ '{print $1}')
-  echo "%{\e[0;35m%}${name}%{\e[0m%}"
-}
-
-export PROMPT=$'%{\e[0;36m%}%1/%{\e[0m%}/ '
-set_prompt () {
-  export RPROMPT=$(project_name)$(git_prompt_info)
-}
-
-
-precmd() {
-  set_prompt
-}
-
-function sr { ./script/runner $* }
