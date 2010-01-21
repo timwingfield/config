@@ -19,7 +19,18 @@
   changed = green
   untracked = cyan
 [merge]
-	tool = opendiff
+	tool = p4merge
+	keepBackup = false
+[mergetool "p4merge"]
+	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+[diff]
+	tool = p4diff
+[difftool "p4diff"]
+  prompt = false
+  cmd = p4merge "$LOCAL" "$BASE"
 [core]
 	autocrlf = input
 	legacyheaders = false
