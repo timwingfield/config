@@ -1,6 +1,6 @@
 [user]
-	name = Adam McCrea
-	email = adam@adamlogic.com
+	name = Steven Harman
+	email = steveharman@gmail.com
 [color]
 	branch = auto
 	diff = auto
@@ -21,6 +21,7 @@
 [merge]
 	tool = opendiff
 [core]
+	autocrlf = input
 	legacyheaders = false
 [repack]
 	usedeltabaseoffset = true
@@ -29,14 +30,7 @@
 	co = checkout
 	st = status
   ch = cherry -v origin
-  mine = log --author=Adam
+  mine = log --author=Steven
 [github]
-	user = adamlogic
-	token = 35647376b5bad04b2c078f1e2164bcb6
-[diff "ruby"]
-	funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
-[push]
-	default = matching
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
+	user = stevenharman
+	token = [GITHUB TOKEN HERE]
