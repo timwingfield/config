@@ -34,6 +34,9 @@
 [core]
 	autocrlf = input
 	legacyheaders = false
+	editor = mate -w
+[gui]
+	fontdiff = -family Monaco -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 [repack]
 	usedeltabaseoffset = true
 [alias]
