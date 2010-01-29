@@ -5,7 +5,7 @@
 - http://gems.rubyforge.org/
 - http://gems.github.com
 gem: --no-ri
-rdoc: --line-numbers --format=shtml --template=direct --main=README.rdoc
+rdoc: --line-numbers
 open: -l
 read: -l
 :verbose: true
