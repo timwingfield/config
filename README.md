@@ -9,3 +9,9 @@ The following rake tasks will set up symbolic links in your home directory for e
 or 
 
     rake symlink:force
+
+## Windows
+
+The following rake task will tweak a few of the default configs to better behave on Windows
+
+    rake windows
