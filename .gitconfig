@@ -1,10 +1,10 @@
 [user]
-	name = Steven Harman
-	email = steveharman@gmail.com
+  name = Steven Harman
+  email = steveharman@gmail.com
 [color]
-	branch = auto
-	diff = auto
-	status = auto
+  branch = auto
+  diff = auto
+  status = auto
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -19,32 +19,34 @@
   changed = green
   untracked = cyan
 [merge]
-	tool = p4merge
-	keepBackup = false
+  tool = p4merge
+  keepBackup = false
 [mergetool "p4merge"]
-	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-	keepTemporaries = false
-	trustExitCode = false
-	keepBackup = false
+  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
 [diff]
-	tool = p4diff
+  tool = p4diff
 [difftool "p4diff"]
   prompt = false
   cmd = p4merge "$LOCAL" "$BASE"
 [core]
-	autocrlf = input
-	legacyheaders = false
-	editor = mate -w
+  autocrlf = input
+  legacyheaders = false
+  editor = mate -w
 [gui]
-	fontdiff = -family Monaco -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+  fontdiff = -family Monaco -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 [repack]
-	usedeltabaseoffset = true
+  usedeltabaseoffset = true
 [alias]
-	ci = commit
-	co = checkout
-	st = status
+  ci = commit
+  co = checkout
+  st = status
   ch = cherry -v origin
   mine = log --author=Steven
+  spull = !git svn fetch && git svn rebase
+  spush = !git svn dcommit
 [github]
-	user = stevenharman
-	token = [GITHUB TOKEN HERE]
+  user = stevenharman
+  token = [GITHUB TOKEN HERE]
