@@ -1,6 +1,6 @@
 [user]
-  name = Steven Harman
-  email = steveharman@gmail.com
+  name = Tim Wingfield
+  email = tim@timwingfield.com
 [color]
   branch = auto
   diff = auto
@@ -44,9 +44,9 @@
   co = checkout
   st = status
   ch = cherry -v origin
-  mine = log --author=Steven
+  mine = log --author=Tim
   spull = !git svn fetch && git svn rebase
   spush = !git svn dcommit
 [github]
-  user = stevenharman
+  user = timwingfield
   token = [GITHUB TOKEN HERE]
