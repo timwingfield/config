@@ -3,7 +3,7 @@ autoload colors && colors
 
 bindkey "^[" vi-cmd-mode
 
-if [[ -s /Users/stevenharman/.rvm/scripts/rvm ]] ; then source /Users/stevenharman/.rvm/scripts/rvm ; fi
+if [[ -s /Users/Timbo/.rvm/scripts/rvm ]] ; then source /Users/Timbo/.rvm/scripts/rvm ; fi
 
 source ~/.zsh/exports.zsh
 source ~/.zsh/prompt.zsh
