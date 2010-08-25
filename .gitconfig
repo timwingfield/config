@@ -49,4 +49,4 @@
   spush = !git svn dcommit
 [github]
   user = timwingfield
-  token = [GITHUB TOKEN HERE]
+  token = d3578984cad0594ff05530bb188061be
