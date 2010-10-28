@@ -47,6 +47,7 @@
   mine = log --author=Tim
   spull = !git svn fetch && git svn rebase
   spush = !git svn dcommit
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [github]
   user = timwingfield
   token = [GITHUB TOKEN HERE]
