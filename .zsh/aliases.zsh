@@ -62,4 +62,5 @@ alias gc='git commit'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias go='git co'
+alias t='todo.sh -d ~/todo.cfg'
 
