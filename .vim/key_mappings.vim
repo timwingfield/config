@@ -1,45 +1,50 @@
 " get out of insert mode with cmd-i
   imap <D-i> <Esc>
 
+" get out of insert mode with ;;
+  imap ;; <Esc> 
+
 " redo with U
   nmap U :redo<cr>
 
 " easy wrap toggling
-  nmap <Leader>w :set wrap<cr>
+  nmap <Leader>w :set wrap!<cr>
   nmap <Leader>W :set nowrap<cr>
 
-" switch windows with g+movement
-  nmap gj j
-  nmap gk k
-  nmap gh h
-  nmap gl l
+" shortcut to save all
+  nmap <Leader>s :wa<cr>
 
-" swap windows
-  nmap gS 
+" shortcuts for running tests
+  nmap <Leader>ra :wa<cr> :RunAllRubyTests<cr>
+  nmap <Leader>rc :wa<cr> :RunRubyFocusedContext<cr>
+  nmap <Leader>rf :wa<cr> :RunRubyFocusedUnitTest<cr>
+  nmap <Leader>rl :wa<cr> :RunLastRubyTest<cr>
+
+" switch windows
+  nmap gw 
+
+" open project view
+  nmap <silent> <F2> :NERDTreeToggle<cr>
+
+" close current window
+  nmap gq :q<cr>
 
 " close all other windows (in the current tab)
   nmap gW :only<cr>
 
-" close all other tabs
-  nmap gT :tabonly<cr>
-
-" previous/next buffer (for going without tabs)
-  nmap g[ :bp<cr>
-  nmap g] :bn<cr>
+" go to the alternate file (previous buffer) with g-enter
+  nmap g 
 
 " ack for project-wide searching
   nmap g/ :LAck 
-  nmap g* :LAck <C-R><C-W> 
+  nmap g* :LAck -w <C-R><C-W><cr>
   nmap ga :LAckAdd 
   nmap gn :lnext<cr>
   nmap gp :lprev<cr>
 
 " shortcuts for frequenly used files
-  nmap gs :e db/schema.rb<cr>
-  nmap gr :e config/routes.rb<cr>
-
-" align pipe-separated tables for cucumber or textile with g| in visual mode
-	vmap g\| :Align \|<cr>
+  nmap gs :tabe db/schema.rb<cr>
+  nmap gr :tabe config/routes.rb<cr>
 
 " insert blank lines without going into insert mode
   nmap go o<esc>
@@ -48,17 +53,17 @@
 " open the source in a browser for distribution or copying as RTF
   nmap gH :OpenHtml<cr>
 
-" scroll up/down one line at a time
-  nmap <Up> 
-  nmap <Down> 
+" Fuzzy Finder - cmd-enter to open selected file in new tab
+  let g:fuf_keyOpenTabpage = '<D-CR>'
+  nmap <Leader>t :FufFile<cr> 
+  nmap <Leader>b :FufBuffer<cr> 
+  nmap <Leader>f :FufRenewCache<cr> 
 
-" scroll left/right
-  nmap <Left> zh
-  nmap <Right> zl
+" mapping the jumping between splits. Hold control while using vim nav.
+  nmap <C-J> <C-W>j<cr>
+  nmap <C-K> <C-W>k<cr>
+  nmap <C-H> <C-W>h<cr>
+  nmap <C-L> <C-W>l<cr>
 
-" Fuzzy Finder - \t to launch; \b just for buffers; cmd-enter to open selected file in new tab
-  nmap <Leader>t :FuzzyFinderTextMate<cr> 
-  nmap <Leader>b :FuzzyFinderBuffer<cr> 
-  nmap <Leader>f :ruby finder.rescan!<cr>
-  
-
+" shortcut for =>
+  imap <C-l> <Space>=><Space>

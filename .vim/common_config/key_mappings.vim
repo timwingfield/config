@@ -1,6 +1,9 @@
 " get out of insert mode with cmd-i
   imap <D-i> <Esc>
 
+" get out of insert mode with ;;
+  imap ;; <Esc> 
+
 " redo with U
   nmap U :redo<cr>
 
@@ -21,7 +24,7 @@
   nmap gw 
 
 " open project view
-  nmap gt :NERDTreeToggle<cr>
+  nmap <silent> <F2> :NERDTreeToggle<cr>
 
 " close current window
   nmap gq :q<cr>
