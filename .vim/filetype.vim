@@ -10,5 +10,3 @@ augroup markdown
   au! BufRead,BufNewFile *.markdown   setfiletype mkd
 augroup END
 
-" Treat scss and sass files as css
-autocmd BufNewFile,BufRead *.scss,*.sass setfiletype css
