@@ -9,5 +9,8 @@ source ~/.zsh/history.zsh
 source ~/.zsh/set_options.zsh
 source ~/.zsh/completion.zsh
 source ~/.zsh/aliases.zsh
+source ~/.zsh/bindkeys.zsh
+source ~/.zsh/completion_rake.zsh
+source ~/.zsh/functions.zsh
 
 if [[ -s /Users/Timbo/.rvm/scripts/rvm ]] ; then source /Users/Timbo/.rvm/scripts/rvm ; fi

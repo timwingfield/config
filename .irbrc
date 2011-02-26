@@ -1,8 +1,20 @@
 require 'rubygems'
-require 'wirble'
+begin
+  require 'wirble'
+  Wirble.init
+  Wirble.colorize
+rescue LoadError => e
+end
 
-Wirble.init
-Wirble.colorize
+begin
+  require 'ap'
+rescue LoadError => e
+end
+
+begin
+  require 'interactive_editor'
+rescue LoadError => e
+end
 
 alias q exit
 
@@ -24,10 +36,8 @@ class Object
     ignored_methods = include_inherited ? Object.methods : self.class.superclass.instance_methods
     (self.methods - ignored_methods).sort
   end
+  alias_method :m, :my_methods
 end
-
-
-######### RAILS ONLY
 
 if $0 == 'irb' && ENV['RAILS_ENV'] 
   require 'logger'

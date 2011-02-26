@@ -43,10 +43,14 @@
   ci = commit
   co = checkout
   st = status
+  br = branch
   ch = cherry -v origin
   mine = log --author=Tim
   spull = !git svn fetch && git svn rebase
   spush = !git svn dcommit
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
 [github]
   user = timwingfield
   token = d3578984cad0594ff05530bb188061be

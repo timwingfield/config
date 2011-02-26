@@ -220,6 +220,7 @@ call TCommentDefineType('xslt',             '<!-- %s -->'      )
 call TCommentDefineType('xslt_inline',      g:tcommentInlineXML)
 call TCommentDefineType('xslt_block',       g:tcommentBlockXML )
 call TCommentDefineType('yaml',             '# %s'             )
+call TCommentDefineType('zsh',              '# %s'             )
 
 
 " :line1,line2 TCommentAs commenttype
@@ -227,9 +228,6 @@ command! -bang -complete=customlist,tcomment#FileTypes -range -nargs=+ TCommentA
             \ call tcomment#CommentAs(<line1>, <line2>, "<bang>", <f-args>)
 
 " :line1,line2 TComment ?commentBegin ?commentEnd
-command! -bang -range -nargs=* TComment keepjumps call tcomment#Comment(<line1>, <line2>, 'G', "<bang>", <f-args>)
-
-" :line1,line2 TCommentRight ?commentBegin ?commentEnd
 command! -bang -range -nargs=* TCommentRight keepjumps call tcomment#Comment(<line1>, <line2>, 'R', "<bang>", <f-args>)
 
 " :line1,line2 TCommentBlock ?commentBegin ?commentEnd
