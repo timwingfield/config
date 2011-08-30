@@ -1,4 +1,4 @@
-export PATH=$PATH:/usr/local/bin:/usr/local/mongodb/bin:/usr/local/git/bin:/opt/local/lib/mysql5/bin:/opt/local/lib/postgresql83/bin:/opt/local/bin:/opt/local/sbin:~/Library/bin:/usr/local/lib/jruby-1.3.1/bin:~/Documents/todo.txt_cli-2.7
+export PATH=usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mongodb/bin:/usr/local/git/bin:/opt/local/lib/mysql5/bin:/opt/local/lib/postgresql83/bin:/opt/local/bin:/opt/local/sbin:~/Library/bin:/usr/local/lib/jruby-1.3.1/bin:~/Documents/todo.txt_cli-2.7
 export CDPATH=:~/projects
 export RUBYOPT='rubygems -Itest'
 export EDITOR="vim"
