@@ -51,7 +51,7 @@
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 " turn spell check on for markdown files
-  au SessionLoadPost,BufNewFile,BufRead *.md,*.markdown setlocal spell spelllang=en_us
-  au SessionLoadPost,BufNewFile,BufRead *.md,*.markdown setlocal wrap
-  au SessionLoadPost,BufNewFile,BufRead *.md,*.markdown setlocal linebreak
-  au SessionLoadPost,BufNewFile,BufRead *.md,*.markdown setlocal wm=2
+  au BufNewFile,BufRead *.md,*.markdown setlocal spell spelllang=en_us
+  au BufNewFile,BufRead *.md,*.markdown setlocal wrap
+  au BufNewFile,BufRead *.md,*.markdown setlocal linebreak
+  au BufNewFile,BufRead *.md,*.markdown setlocal wm=2
