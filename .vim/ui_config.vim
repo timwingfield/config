@@ -8,3 +8,7 @@
   
 " terminal-compatible colorscheme
   colors ir_black
+
+"set intial size
+  set lines=50 columns=150
+  
