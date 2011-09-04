@@ -58,3 +58,6 @@
 
 " turn on javascript colors for a json file
   autocmd BufNewFile,BufRead *.json set ft=javascript
+
+" have NERDTree show hidden files by default
+  let NERDTreeShowHidden=1
