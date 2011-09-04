@@ -55,3 +55,6 @@
   au BufNewFile,BufRead *.md,*.markdown setlocal wrap
   au BufNewFile,BufRead *.md,*.markdown setlocal linebreak
   au BufNewFile,BufRead *.md,*.markdown setlocal wm=2
+
+" turn on javascript colors for a json file
+  autocmd BufNewFile,BufRead *.json set ft=javascript

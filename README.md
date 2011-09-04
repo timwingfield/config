@@ -1,5 +1,6 @@
-<<<<<<< HEAD
 # My config files
+Thanks to the good folks at Edgecase for this config set up. I have removed a bunch of things they have that I don't
+use, but the Edgecase set up was definitely the starting point.
 
 ## Setup
 
@@ -19,12 +20,6 @@ The following rake task will tweak a few of the default configs to better behave
 =======
 # Setup
 
-## EdgeCase Pairing Machines
-
-The following rake task will set up all necessary symbolic links in your home directory:
-
-    rake symlink:force
-
 ## Personal Usage
 
 Aside from .gitconfig, this configuration is not specific to EdgeCase pairing machines.  To use on your personal machine, run the following rake task:
@@ -38,4 +33,3 @@ This will forcefully create symlinks for all included configuration files *excep
 ## Emacs
 
 http://github.com/jimweirich/emacs-setup/tree/master
->>>>>>> upstream/master
