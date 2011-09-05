@@ -13,11 +13,11 @@ set_term_tab() {
 }
 
 function set_prompt() {
-  export PS1='%2/ ≈ '
+  export PS1='$reset_color$fg[yellow]%2/$reset_color ≈ '
 
   branch_name=$(git_branch_name)
   if [ -n "$branch_name" ]; then
-    export PS1='%1~%{$reset_color$bold_color$fg[green]%}%{$reset_color$fg[green]%} ($branch_name)%{$reset_color%} ≈ '
+    export PS1='$reset_color$fg[yellow]%1~%{$reset_color$bold_color$fg[green]%}%{$reset_color$fg[green]%} ($branch_name)%{$reset_color%} ≈ '
   fi
 }
 
