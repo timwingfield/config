@@ -34,4 +34,4 @@
   nmap <Leader>f :FufRenewCache<cr> 
 
 " shortcut for =>
-  imap <C-l> <Space>=><Space>
+  imap <C-h> <Space>=><Space>
