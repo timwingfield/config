@@ -1,3 +1,9 @@
 [submodule "emacs-config/jimweirich"]
 	path = emacs-config/jimweirich
 	url = git://github.com/jimweirich/emacs-setup.git
+[submodule "bundle/jasmine"]
+	path = bundle/jasmine
+	url = git://github.com/claco/jasmine.vim.git
+[submodule ".vim/bundle/jasmine"]
+	path = .vim/bundle/jasmine
+	url = git://github.com/claco/jasmine.vim.git
