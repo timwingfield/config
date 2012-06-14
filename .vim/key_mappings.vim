@@ -1,8 +1,8 @@
 " get out of insert mode with cmd-i
   imap <D-i> <Esc>
 
-" get out of insert mode with ;;
-  imap ;; <Esc> 
+" get out of insert mode with jk
+  imap jk <Esc>
 
 " redo with U
   nmap U :redo<cr>
