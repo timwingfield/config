@@ -27,3 +27,5 @@ runtime key_mappings.vim
     autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
     autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
   augroup END
+
+vnoremap <silent> <localleader>c :CoffeeCompile<CR>
