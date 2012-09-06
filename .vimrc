@@ -29,3 +29,6 @@ runtime key_mappings.vim
   augroup END
 
 vnoremap <silent> <localleader>c :CoffeeCompile<CR>
+
+" defaults localvimrc file to not prompt to source the .lvimrc file
+let g:localvimrc_ask=0
