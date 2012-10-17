@@ -54,3 +54,5 @@
 [github]
   user = timwingfield
   token = d3578984cad0594ff05530bb188061be
+[credential]
+	helper = osxkeychain
