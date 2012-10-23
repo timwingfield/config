@@ -34,7 +34,7 @@
 [core]
   autocrlf = input
   legacyheaders = false
-  editor = mate -w
+	editor = mvim
 [gui]
   fontdiff = -family Monaco -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 [repack]
@@ -56,3 +56,5 @@
   token = d3578984cad0594ff05530bb188061be
 [credential]
 	helper = osxkeychain
+[push]
+	default = current
