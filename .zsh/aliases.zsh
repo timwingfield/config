@@ -1,9 +1,3 @@
-# Comverge aliases => for Apollo change Locale to en-ZA for South Africa
-# Rails aliases
-alias zarc='NO_BIS=blah LOCALE=en-ZA be rails c'
-alias zars='NO_BIS=blah LOCALE=en-ZA be rails s'
-alias rdbm='rake db:migrate db:test:prepare'
-
 # My aliases
 alias ajaxrdoc="rdoc --fmt ajax --exclude '.*generator.*' --exclude '.*test.*' --exclude '.*spec.*'"
 alias devlog='tail -200 -f log/development.log'

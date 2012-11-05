@@ -31,3 +31,12 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#project shortcuts
+alias pom='cd /Users/Timbo/Code/simplypractice/pomfrey'
+alias td='cd /Users/Timbo/Code/testdouble/comverge/intellisource'
+
+# Rails aliases
+alias zarc='NO_BIS=blah LOCALE=en-ZA be rails c'
+alias zars='NO_BIS=blah LOCALE=en-ZA be rails s'
+alias rdbm='rake db:migrate db:test:prepare'
