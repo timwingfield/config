@@ -36,7 +36,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias pom='cd /Users/Timbo/Code/simplypractice/pomfrey'
 alias td='cd /Users/Timbo/Code/testdouble/comverge/intellisource'
 
-# Rails aliases
+# Comverge aliases
 alias zarc='NO_BIS=blah LOCALE=en-ZA be rails c'
 alias zars='NO_BIS=blah LOCALE=en-ZA be rails s'
 alias rdbm='rake db:migrate db:test:prepare'
+alias jci='bundle exec jasmine-headless-webkit -j spec/javascripts/support/energy_insight.yml'
