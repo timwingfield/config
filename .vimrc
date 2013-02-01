@@ -4,6 +4,10 @@ call pathogen#runtime_append_all_bundles()
   set number
   setlocal numberwidth=3
 
+"set cursor highlights
+  set cursorcolumn
+  set cursorline
+
 " These two enable syntax highlighting
   set nocompatible
   syntax on
@@ -11,8 +15,6 @@ call pathogen#runtime_append_all_bundles()
 " set initial color scheme
   colors twilight2
 
-" set intial size
-  set lines=50 columns=150
 
 runtime general_config.vim
 runtime key_mappings.vim
@@ -29,6 +31,9 @@ runtime key_mappings.vim
   augroup END
 
 vnoremap <silent> <localleader>c :CoffeeCompile<CR>
+
+" set intial size
+  set lines=50 columns=174
 
 " defaults localvimrc file to not prompt to source the .lvimrc file
 let g:localvimrc_ask=0
