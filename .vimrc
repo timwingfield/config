@@ -6,14 +6,15 @@ call pathogen#runtime_append_all_bundles()
 
 "set cursor highlights
   set cursorcolumn
-  set cursorline
+  set cul
+  set ruler
 
 " These two enable syntax highlighting
   set nocompatible
   syntax on
   
 " set initial color scheme
-  colors twilight2
+  colors vividchalk
 
 
 runtime general_config.vim
