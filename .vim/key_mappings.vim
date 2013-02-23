@@ -3,6 +3,7 @@
 
 " get out of insert mode with jk
   imap jk <Esc>
+  imap kj <Esc>
 
 " redo with U
   nmap U :redo<cr>

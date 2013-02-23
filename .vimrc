@@ -5,8 +5,6 @@ call pathogen#runtime_append_all_bundles()
   setlocal numberwidth=3
 
 "set cursor highlights
-  set cursorcolumn
-  set cul
   set ruler
 
 " These two enable syntax highlighting
@@ -17,8 +15,8 @@ call pathogen#runtime_append_all_bundles()
   colors vividchalk
 
 
-runtime general_config.vim
-runtime key_mappings.vim
+ runtime general_config.vim
+ runtime key_mappings.vim
 
 :filetype plugin on
 :abbr hte the
@@ -34,7 +32,7 @@ runtime key_mappings.vim
 vnoremap <silent> <localleader>c :CoffeeCompile<CR>
 
 " set intial size
-  set lines=50 columns=174
+  set lines=50 columns=210
 
 " defaults localvimrc file to not prompt to source the .lvimrc file
 let g:localvimrc_ask=0
