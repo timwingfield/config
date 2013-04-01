@@ -15,7 +15,9 @@ augroup end
 " ****************************************************************************** 
 
 " the color sheme, dumbass
-colorscheme vividchalk
+colorscheme distinguished 
+"colorscheme vividchalk
+"colorscheme twilight
 
 " update the file if it's been changed externally
 set autoread
@@ -168,7 +170,7 @@ augroup END
   "autocmd BufNewFile,BufRead *.json set ft=javascript
 
 " have NERDTree show hidden files by default
-  "let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1
   
 " Set temporary directory (don't litter local dir with swp/tmp files)
   "set directory=/tmp/
