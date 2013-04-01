@@ -27,16 +27,20 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 
 " highlight current line
-set cul
+"set cul
 
 " highlight current column
-set cursorcolumn
+"set cursorcolumn
+
+"set cursor highlights
+set ruler
 
 " allow hidden buffers instead of closing
 set hidden
 
 " always show line number
 set number 
+setlocal numberwidth=3
 
 " scroll buffer
 set scrolloff=10
@@ -47,14 +51,24 @@ set shortmess+=I
 " shows selected lines
 set showcmd
 
-" jumps to matching brackets
+" match braces and other auto complete magic
 set showmatch
+set completeopt=menu,preview
+set wildmenu
+set wildmode=list:longest,full
 
 " vim is terrible without this - no beeps
 set visualbell 
 
 " enable color syntax highlighting
+set nocompatible
 syntax on
+
+" assume the /g flag on :s substitutions to replace all matches in a line:
+set gdefault
+
+" don't make it look like there are line breaks where there aren't:
+set nowrap
 
 " ****************************************************************************** 
 " BACKUP FILES
@@ -75,11 +89,6 @@ set nowritebackup
 " COMPLETION
 " ******************************************************************************  
 
-" allows command line completion
-set wildmenu
-
-" command line expansion options
-set wildmode=list:longest,full
 
 " ignore from completion
 set wildignore=*.o,*.obj,*~
@@ -122,14 +131,48 @@ set statusline+=%=Buffer:\ %n\ --\ Location:\ %l/%L:%c\
 " TABS AND SPACES
 " ******************************************************************************
 
-" use spaces instead of tabs
-set expandtab
+" use indents of 2 spaces, and have them copied down lines:
+  set expandtab
+  set tabstop=2
+  set softtabstop=2 
+  set shiftwidth=2
 
-" columns per tab
-set tabstop=2
+  set autoindent
 
-" number of spaces per indent (<< or >>)
-set shiftwidth=2
+" ****************************************************************************** 
+" MARKDOWN
+" ******************************************************************************
 
-" columns per tab in insert mode
-set softtabstop=2
+augroup mkd
+  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
+  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
+augroup END
+
+augroup markdown
+  au! BufRead,BufNewFile *.mkd   setfiletype mkd
+  au! BufRead,BufNewFile *.md   setfiletype mkd
+  au! BufRead,BufNewFile *.markdown   setfiletype mkd
+augroup END
+
+" turn spell check on for markdown files
+  au BufNewFile,BufRead *.md,*.markdown setlocal spell spelllang=en_us
+  au BufNewFile,BufRead *.md,*.markdown setlocal wrap
+  au BufNewFile,BufRead *.md,*.markdown setlocal linebreak
+  au BufNewFile,BufRead *.md,*.markdown setlocal wm=2
+
+" *** Maybe turn these on? ***
+" remember last position in file
+  "au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+" turn on javascript colors for a json file
+  "autocmd BufNewFile,BufRead *.json set ft=javascript
+
+" have NERDTree show hidden files by default
+  "let NERDTreeShowHidden=1
+  
+" Set temporary directory (don't litter local dir with swp/tmp files)
+  "set directory=/tmp/
+
+" have one hundred lines of command-line (etc) history:
+  "set history=100

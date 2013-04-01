@@ -8,7 +8,25 @@ nnoremap <F1> <ESC>
 " NORMAL MODE MAP
 " ****************************************************************************** 
 
-inoremap kj <Esc>
+" redo with U
+nnoremap U :redo<cr>
+
+" switch windows
+nnoremap gw 
+
+" open project view
+nnoremap <silent> <F2> :NERDTreeToggle<cr>
+
+" insert blank lines without going into insert mode
+nnoremap go o<esc>
+nnoremap gO O<esc>
+
+" ****************************************************************************** 
+" INSERT MODE MAP
+" ****************************************************************************** 
+
+" get out of insert mode with jk
+inoremap jk <Esc>
 
 " ****************************************************************************** 
 " QUICK SOURCE/EDIT OF .vimrc
