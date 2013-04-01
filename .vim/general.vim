@@ -61,7 +61,6 @@ set wildmode=list:longest,full
 set visualbell 
 
 " enable color syntax highlighting
-set nocompatible
 syntax on
 
 " assume the /g flag on :s substitutions to replace all matches in a line:
