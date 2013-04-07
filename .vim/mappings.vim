@@ -32,5 +32,19 @@ inoremap jk <Esc>
 " QUICK SOURCE/EDIT OF .vimrc
 " ****************************************************************************** 
 
-nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
-nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :e $MYVIMRC<cr>
+nnoremap <silent> <leader>sv :so $MYVIMRC<cr>
+
+" toggle relative numbers
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>

@@ -11,13 +11,19 @@ augroup end
 " ****************************************************************************** 
 " BASICS
 "
-" Oh, behave...
 " ****************************************************************************** 
 
 " the color sheme, dumbass
 colorscheme distinguished 
-"colorscheme vividchalk
-"colorscheme twilight
+
+highlight StatusLineNC ctermbg=238 ctermfg=0
+highlight StatusLine   ctermbg=240 ctermfg=15
+
+" toggle status line on insert mode
+if version >= 700
+  au InsertEnter * hi StatusLine ctermbg=2   ctermfg=235
+  au InsertLeave * hi StatusLine ctermbg=240 ctermfg=15
+endif
 
 " update the file if it's been changed externally
 set autoread
@@ -41,8 +47,7 @@ set ruler
 set hidden
 
 " always show line number
-set number 
-setlocal numberwidth=3
+set relativenumber 
 
 " scroll buffer
 set scrolloff=10
