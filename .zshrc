@@ -30,7 +30,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export EDITOR='vim'
+
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
+
+# Set up tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 #project shortcuts
 alias pom='cd /Users/Timbo/Code/simplypractice/pomfrey'
