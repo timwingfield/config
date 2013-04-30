@@ -20,7 +20,7 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
-Bundle 'vim-scripts/Jasmine-snippets-for-snipMate'
+Bundle 'thomd/vim-jasmine'
 
 " ****************************************************************************** 
 " COMMAND-T
