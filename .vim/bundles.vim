@@ -16,6 +16,11 @@ Bundle 'vim-scripts/twilight'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-commentary'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/vim-snippets'
+Bundle 'garbas/vim-snipmate'
+Bundle 'vim-scripts/Jasmine-snippets-for-snipMate'
 
 " ****************************************************************************** 
 " COMMAND-T
