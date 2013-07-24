@@ -21,6 +21,8 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'thomd/vim-jasmine'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
 " ****************************************************************************** 
 " COMMAND-T

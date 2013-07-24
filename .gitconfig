@@ -19,7 +19,7 @@
   changed = green
   untracked = cyan
 [merge]
-  tool = p4merge 
+	tool = opendiff
   keepBackup = false
 [mergetool "p4merge"]
   cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
@@ -28,6 +28,7 @@
   keepBackup = false
 [diff]
   tool = p4diff
+	external = /Users/Timbo/bin/git-diff-cmd.sh
 [difftool "p4diff"]
   prompt = false
   cmd = p4merge "$LOCAL" "$BASE"
