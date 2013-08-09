@@ -23,6 +23,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'thomd/vim-jasmine'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'tpope/vim-fugitive'
 
 " ****************************************************************************** 
 " COMMAND-T
