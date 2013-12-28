@@ -35,10 +35,10 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 
 " highlight current line
-"set cul
+set cul
 
 " highlight current column
-"set cursorcolumn
+set cursorcolumn
 
 "set cursor highlights
 set ruler
@@ -75,6 +75,9 @@ set gdefault
 
 " don't make it look like there are line breaks where there aren't:
 set nowrap
+
+" disable folding
+set nofoldenable
 
 " ****************************************************************************** 
 " BACKUP FILES

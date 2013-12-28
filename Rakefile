@@ -2,31 +2,20 @@ require 'rubygems'
 require 'rake'
 
 desc "create symbolic links to each config file"
-task :symlink do
-  symlink
-end
+task :default do
+  files = Dir.glob('.*') - ['.git', '.gitmodules', '.DS_Store', '.', '..']
 
-namespace :symlink do
-  task :force do
-    symlink(true)
+  files.each do |file|
+    link_file(file)
   end
 end
 
-desc "adjust for Windows"
-task :windows do
-	abort 'This is for Windows, yo!' unless RUBY_PLATFORM.downcase.include?('mswin')
+def link_file(file)
+  p " => symlinking #{file}"
+  directory = File.dirname(__FILE__)
+  env_home = ENV["HOME"]
 
-	system 'git config --global core.autocrlf true'
-	system 'git config --global core.editor "e -w"'
-	system 'git config --global gui.fontdiff "-family Consolas -size 12 -weight normal -slant roman -underline 0 -overstrike 0"'
+  # p "ln -s '#{File.join(directory, file)}' '#{env_home}/#{file}'"
+  sh("ln -s -Ff '#{File.join(directory, file)}' '#{env_home}/#{file}'")
 end
 
-def symlink(force = false)
-  dir = File.dirname(__FILE__)
-  force = force ? '-Ff' : ''
-
-  (Dir.glob('.*') - ['.git', '.', '..']).each do |file|
-    `ln -s #{force} #{File.join(dir, file)} #{File.join(File.expand_path(ENV['HOME']), file)}`
-    # FileUtils.ln_s("#{File.join(dir, file)}", "#{ENV['HOME']}/#{file}", :force => force)
-  end
-end
