@@ -32,9 +32,6 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vim'
 
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
-
 # Set up tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
