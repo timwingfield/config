@@ -35,6 +35,9 @@ export EDITOR='vim'
 # Set up tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
+# rbenv setup
+eval "$(rbenv init -)"
+
 #project shortcuts
 alias pom='cd /Users/Timbo/Code/simplypractice/pomfrey'
 alias td='cd /Users/Timbo/Code/testdouble/comverge/intellisource'
