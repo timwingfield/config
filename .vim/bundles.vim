@@ -5,12 +5,12 @@
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
-Bundle 'wincent/Command-T'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-vividchalk'
+Bundle 'vim-scripts/summerfruit256.vim'
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'vim-scripts/twilight'
 Bundle 'kchmck/vim-coffee-script'
@@ -24,15 +24,22 @@ Bundle 'timwingfield/jasmine.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/summerfruit256.vim'
+Bundle 'kien/ctrlp.vim'
+
 
 " ****************************************************************************** 
-" COMMAND-T
+" CTRLP
 " ******************************************************************************   
 
-let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
-let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+" show hidden files
+let g:ctrlp_show_hidden = 1
+
+" visual config
+let g:ctrlp_match_window = "bottom,order:ttp,min:1,max:20,results20"
+
+nnoremap <silent> <leader>t :CtrlP<cr>
+nnoremap <silent> <leader>b :CtrlPBuffer<cr>
+
 
 " ******************************************************************************
 " NERDTREEE
