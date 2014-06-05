@@ -24,6 +24,7 @@ Bundle 'timwingfield/jasmine.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'vim-scripts/summerfruit256.vim'
 
 " ****************************************************************************** 
 " COMMAND-T

@@ -100,7 +100,7 @@ set nowritebackup
 
 
 " ignore from completion
-set wildignore=*.o,*.obj,*~
+set wildignore=*.o,*.obj,*~,node_modules
 
 " ******************************************************************************
 " CURSOR
