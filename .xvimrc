@@ -1,0 +1,4 @@
+nnoremap <F1> <ESC>
+nnoremap U :redo<cr>
+nnoremap gw 
+inoremap jk <Esc>
