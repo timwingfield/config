@@ -38,4 +38,4 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias go='git co'
 alias t='todo.sh -d ~/todo.cfg'
-
+alias gitflush='git branch --merged master | grep -v master | xargs git branch -d && git remote prune origin'

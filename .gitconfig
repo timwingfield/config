@@ -19,25 +19,23 @@
   changed = green
   untracked = cyan
 [merge]
-	tool = opendiff
+	tool = p4merge
   keepBackup = false
 [mergetool "p4merge"]
   cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-  keepTemporaries = false
   trustExitCode = false
+  keepTemporaries = false
   keepBackup = false
-[diff]
-  tool = p4diff
-	external = /Users/Timbo/bin/git-diff-cmd.sh
-[difftool "p4diff"]
-  prompt = false
-  cmd = p4merge "$LOCAL" "$BASE"
+[difftool]
+  external = p4diff
 [core]
   autocrlf = input
   legacyheaders = false
 	editor = vim
 [repack]
   usedeltabaseoffset = true
+[branch]
+  autosetuprebase = always
 [alias]
   ci = commit
   co = checkout
@@ -57,3 +55,5 @@
 	helper = osxkeychain
 [push]
 	default = current
+[rerere]
+  enabled = true
