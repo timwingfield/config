@@ -4,29 +4,32 @@
 
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-commentary'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/vim-snippets'
-Bundle 'garbas/vim-snipmate'
-Bundle 'timwingfield/jasmine.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'ervandew/supertab'
+Plugin 'garbas/vim-snipmate'
+Plugin 'gmarik/vundle'
+Plugin 'godlygeek/tabular'
+Plugin 'honza/vim-snippets'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tomtom/tlib_vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'timwingfield/jasmine.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 
 " **** color schemes ****
-Bundle 'tpope/vim-vividchalk'
-Bundle 'Lokaltog/vim-distinguished'
-Bundle 'vim-scripts/summerfruit256.vim'
-Bundle 'vim-scripts/twilight'
+Plugin 'tpope/vim-vividchalk'
+Plugin 'Lokaltog/vim-distinguished'
+Plugin 'vim-scripts/summerfruit256.vim'
+Plugin 'vim-scripts/twilight'
 
 
 " ****************************************************************************** 
@@ -98,3 +101,16 @@ nnoremap <silent> <leader>g :GitGutterToggle<CR>
 
 " toggle the git gutter highlights
 nnoremap <silent> <leader>h :GitGutterLineHighlightsToggle<CR>
+
+" ****************************************************************************** 
+" VIM-AIRLINE
+" ****************************************************************************** 
+
+" add fancy schmancy fonts
+let g:airline_powerline_fonts=1
+
+" set the airline theme
+let g:airline_theme='simple'
+
+" show buffers
+let g:airline#extensions#tabline#enabled = 1
