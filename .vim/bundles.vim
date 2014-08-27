@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
+Plugin 'burnettk/vim-angular'
 Plugin 'ervandew/supertab'
 Plugin 'garbas/vim-snipmate'
 Plugin 'gmarik/vundle'
