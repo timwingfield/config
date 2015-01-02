@@ -19,10 +19,10 @@
   changed = green
   untracked = cyan
 [merge]
-	tool = p4merge
+	tool = custom
   keepBackup = false
-[mergetool "p4merge"]
-  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+[mergetool "custom"]
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$PWD/$BASE" "$PWD/$LOCAL" "$PWD/$REMOTE" "$PWD/$MERGED"
   trustExitCode = false
   keepTemporaries = false
   keepBackup = false

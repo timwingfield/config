@@ -18,10 +18,11 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'tomtom/tlib_vim'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'timwingfield/jasmine.vim'
+Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -116,3 +117,6 @@ let g:airline_theme='simple'
 
 " show buffers
 let g:airline#extensions#tabline#enabled = 1
+
+" show only filename in tab bar
+let g:airline#extensions#tabline#fnamemod = ':t'

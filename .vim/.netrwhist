@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/Users/Timbo/Code/Pillar/abercrombie/pdp/workspace'
 let g:netrw_dirhist_2='/Volumes/Data/Users/Timbo/Code/config/.vim'
+let g:netrw_dirhist_3='/Volumes/Data/Users/Timbo/Code/config'
