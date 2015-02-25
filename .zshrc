@@ -27,6 +27,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git ruby rvm bunder)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.profile
 
 # Customize to your needs...
 
@@ -34,9 +35,6 @@ export EDITOR='vim'
 
 # Set up tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-
-# rbenv setup
-eval "$(rbenv init -)"
 
 #project shortcuts
 alias pom='cd /Users/Timbo/Code/simplypractice/pomfrey'
@@ -48,3 +46,15 @@ alias zars='NO_BIS=blah LOCALE=en-ZA be rails s'
 alias rdbm='rake db:migrate db:test:prepare'
 alias jci='bundle exec jasmine-headless-webkit -c -j spec/javascripts/support/energy_insight.yml'
 export PATH=/usr/local/bin:$PATH
+
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+chruby 2.1.3
+
+# added by travis gem
+[ -f /Volumes/Data/Users/Timbo/.travis/travis.sh ] && source /Volumes/Data/Users/Timbo/.travis/travis.sh
+
+# adds nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
