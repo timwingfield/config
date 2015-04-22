@@ -13,6 +13,9 @@ augroup end
 "
 " ****************************************************************************** 
 
+" sets shell to my shell
+set shell=sh
+
 " the color sheme, dumbass
 colorscheme distinguished 
 

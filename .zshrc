@@ -24,7 +24,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby rvm bunder)
+plugins=(git ruby bundler)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.profile
@@ -36,15 +36,13 @@ export EDITOR='vim'
 # Set up tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-#project shortcuts
-alias pom='cd /Users/Timbo/Code/simplypractice/pomfrey'
-alias td='cd /Users/Timbo/Code/testdouble/comverge/intellisource'
+# configure home directory for brew-cask
+export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
-# Comverge aliases
-alias zarc='NO_BIS=blah LOCALE=en-ZA be rails c'
-alias zars='NO_BIS=blah LOCALE=en-ZA be rails s'
-alias rdbm='rake db:migrate db:test:prepare'
-alias jci='bundle exec jasmine-headless-webkit -c -j spec/javascripts/support/energy_insight.yml'
+#project shortcuts
+#alfa jango git commit harvester
+alias gitsum='git log --pretty=format:"* %s" --author `git config user.email`'
+
 export PATH=/usr/local/bin:$PATH
 
 source /usr/local/share/chruby/chruby.sh
