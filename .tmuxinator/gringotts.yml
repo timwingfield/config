@@ -1,0 +1,10 @@
+# ~/.tmuxinator/gringotts.yml
+# you can make as many tabs as you wish...
+
+project_name: gringotts 
+project_root: ~/Code/backbone/gringotts
+windows:
+  - editor: vim
+  - shell: 
+  - specs: lineman spec
+  - server: lineman run

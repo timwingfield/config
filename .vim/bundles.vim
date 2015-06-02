@@ -7,6 +7,7 @@ call vundle#rc()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'burnettk/vim-angular'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
 Plugin 'garbas/vim-snipmate'
 Plugin 'gmarik/vundle'

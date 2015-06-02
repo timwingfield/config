@@ -1,0 +1,8 @@
+# ~/.tmuxinator/saul.yml
+# you can make as many tabs as you wish...
+
+project_name: config
+project_root: ~/Code/config
+tabs:
+  - editor: vim
+  - shell: 

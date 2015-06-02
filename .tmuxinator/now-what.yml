@@ -1,0 +1,9 @@
+# ~/.tmuxinator/now-what.yml
+# you can make as many tabs as you wish...
+
+project_name: now-what
+project_root: ~/Code//iOS\ Projects/NowWhat
+windows:
+  - editor: vim
+  - shell: 
+  - shell:

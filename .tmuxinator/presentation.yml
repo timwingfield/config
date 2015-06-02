@@ -1,0 +1,9 @@
+# ~/.tmuxinator/saul.yml
+# you can make as many tabs as you wish...
+
+project_name: presentation
+project_root: ~/Code
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 

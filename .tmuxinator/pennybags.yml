@@ -1,0 +1,10 @@
+# ~/.tmuxinator/bluebox.yml
+# you can make as many tabs as you wish...
+
+project_name: pennybags
+project_root: ~/Code/sandbox/pennybags
+tabs:
+  - editor: vim
+  - shell: 
+  - specs: 
+  - server: be rails s

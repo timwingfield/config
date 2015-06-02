@@ -1,0 +1,11 @@
+# ~/.tmuxinator/zambia.yml
+# you can make as many tabs as you wish...
+
+project_name: zambia
+project_root: ~/Code/codeandcoffee/zambia
+#rvm: ruby-1.9.2-p290@zambia
+windows:
+  - editor: vim
+  - specs: bundle exec guard
+  - shell: 
+  - server: bundle exec rails s

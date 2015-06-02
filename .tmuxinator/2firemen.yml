@@ -1,0 +1,11 @@
+# ~/.tmuxinator/2firemen.yml
+# you can make as many tabs as you wish...
+
+project_name: two-firemen 
+project_root: ~/Code/gameon/two-firemen
+
+windows:
+  - editor: vim
+  - shell: 
+  - specs:
+  - server: rails s

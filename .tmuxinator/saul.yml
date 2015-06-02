@@ -1,0 +1,9 @@
+# ~/.tmuxinator/saul.yml
+# you can make as many tabs as you wish...
+
+project_name: saul
+project_root: ~/Code/codemash/saul
+windows:
+  - editor: vim
+  - shell: 
+  - specs: 

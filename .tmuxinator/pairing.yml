@@ -1,0 +1,14 @@
+# ~/.tmuxinator/pairing.yml
+# you can make as many tabs as you wish...
+
+project_name: pairing
+project_root: ~/Code/testdouble/musx/musx-web
+windows:
+  - editor:
+      layout: 7ddf,318x68,0,0{241x68,0,0,0,76x68,242,0[76x52,242,0,3,76x15,242,53,4]}
+      panes:
+        - vim
+        - #empty
+        - #empty
+  - shell: 
+  - shell: 

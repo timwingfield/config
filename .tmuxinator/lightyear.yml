@@ -1,0 +1,9 @@
+# ~/.tmuxinator/lightyear.yml
+# you can make as many tabs as you wish...
+
+project_name: lightyear
+project_root: ~/Code/Disney/lightyear
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 
