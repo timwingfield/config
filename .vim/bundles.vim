@@ -2,7 +2,7 @@
 " VUNDLE!
 " ******************************************************************************  
 
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
@@ -26,11 +26,13 @@ Plugin 'scrooloose/syntastic'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'timwingfield/jasmine.vim'
 Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
 
 " **** color schemes ****
 Plugin 'tpope/vim-vividchalk'

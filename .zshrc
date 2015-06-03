@@ -39,16 +39,16 @@ export EDITOR='vim'
 # configure home directory for brew-cask
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
-#project shortcuts
-#alfa jango git commit harvester
-alias gitsum='git log --pretty=format:"* %s" --author `git config user.email`'
 
 export PATH=/usr/local/bin:$PATH
+
+# put postgres.app in the path
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-chruby 2.1.3
+chruby 2.1.5
 
 # added by travis gem
 [ -f /Volumes/Data/Users/Timbo/.travis/travis.sh ] && source /Volumes/Data/Users/Timbo/.travis/travis.sh
