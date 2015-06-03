@@ -1,10 +1,6 @@
 .DS_Store
 tags
-.netrwhist
-r.rb
-.zsh_rake_cache
-.console
-*~
 TAGS
+.netrwhist
 .vim/syntax/git-log.vim
 .vim/bundle
