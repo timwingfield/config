@@ -57,3 +57,7 @@ chruby 2.1.5
 # adds nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+# FireEye/Mandiant config
+# sets redis_vars
+export REDIS_VARS_URL=redis://config.mansfield.mandiant.com:6379/0
