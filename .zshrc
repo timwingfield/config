@@ -44,7 +44,7 @@ export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 export PATH=/usr/local/bin:$PATH
 
 # put postgres.app in the path
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
