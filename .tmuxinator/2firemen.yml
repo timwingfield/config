@@ -2,7 +2,7 @@
 # you can make as many tabs as you wish...
 
 project_name: two-firemen 
-project_root: ~/Code/gameon/two-firemen
+project_root: ~/Code/projects/gameon/two-firemen
 
 windows:
   - editor: vim
