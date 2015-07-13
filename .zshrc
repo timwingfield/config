@@ -29,6 +29,7 @@ plugins=(git ruby bundler)
 source $ZSH/oh-my-zsh.sh
 source ~/.profile
 source ~/.zsh/aliases.zsh
+source ~/.zsh/functions.zsh
 
 # Customize to your needs...
 

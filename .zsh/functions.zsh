@@ -1,48 +1,26 @@
-function gitdays {
-  git log --author=Tim --reverse --since="$@ days ago" --pretty="format:%n%Cgreen%cd%n%n%s%n%b%n---------------------------------------------" 
-}
-
-# accepts a css file and compacts the delcarations to one line
-function css_compact {
-  cat $@ | css2sass | sass -t compact > $@
-}
-
-# hamlizes whatever is on the clipboard
-function pbhaml {
-  pbpaste | html2haml | pbcopy
-}
-
-function md {
-  markdown.pl $@ > /tmp/generated_by_markdown.html; open /tmp/generated_by_markdown.html
-}
-
-function railstags() {
-  rtags --vi -a -f tags -R app -R lib -R script -R spec
-}
-
-function push_configs() {
-  pushd
-  cd ~/projects/config
-  git add . && git commit -a && git push
-  popd
-}
-
-function pull_configs() {
-  pushd
-  cd ~/projects/config
-  git pull
-  popd
-}
-
-function vack() {
-  ack -l $* | xargs mvim -p
-}
-
-function reload! {
-  echo Restarting Passenger...
-  touch tmp/restart.txt
-}
-
 function internet\? {
   (ping -c 3 -t 3 google.com >/dev/null 2>&1 && echo 'yep') || echo 'nope'
 }
+
+# Remove the need for bundle exec ... or ./bin/...
+# by adding ./bin to path if the current project is trusted
+
+function set_local_bin_path() {
+  # Replace any existing local bin paths with our new one
+  export PATH="${1:-""}`echo "$PATH"|sed -e 's,[^:]*\.git/[^:]*bin:,,g'`"
+}
+
+function add_trusted_local_bin_to_path() {
+  if [[ -d "$PWD/.git/safe"  ]]; then
+  # We're in a trusted project directory so update our local bin path
+  set_local_bin_path "$PWD/.git/safe/../../bin:"
+  fi
+}
+
+# Make sure add_trusted_local_bin_to_path runs after chruby so we
+# prepend the default chruby gem paths
+if [[ -n "$ZSH_VERSION"  ]]; then
+  if [[ ! "$preexec_functions" == *add_trusted_local_bin_to_path*  ]]; then
+  preexec_functions+=("add_trusted_local_bin_to_path")
+  fi
+fi
