@@ -20,6 +20,7 @@ alias testlog='tail -200 -f log/test.log'
 # alias t='todo.sh -d ~/todo.cfg'
 
 alias gitflush='git branch --merged master | grep -v master | xargs git branch -d && git remote prune origin'
+alias forgit='git branch -r --merged integration | grep -v origin/integration | xargs git branch -d -r'
 
 alias whoamtmate="tmate display -p '#{tmate_ssh}'"
 
