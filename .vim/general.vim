@@ -6,6 +6,7 @@ augroup syntax
   autocmd!
   autocmd BufNewFile,BufRead *.json setfiletype javascript
   autocmd BufNewFile,BufRead {Gemfile,Guardfile,*.rabl} setfiletype ruby
+  autocmd BufNewFile,BufRead *.cjsx setfiletype coffee
 augroup end
 
 " ****************************************************************************** 
