@@ -1,0 +1,10 @@
+# ~/.tmuxinator/sandbox.yml
+# you can make as many tabs as you wish...
+
+project_name: sandbox
+project_root: ~/Code/mandiant/sandbox
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 
+  - shell: 
