@@ -1,6 +1,6 @@
-" ****************************************************************************** 
+" ******************************************************************************
 " VUNDLE!
-" ******************************************************************************  
+" ******************************************************************************
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -8,7 +8,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
-Plugin 'garbas/vim-snipmate'
 Plugin 'gmarik/vundle'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
@@ -22,6 +21,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-commentary'
@@ -31,6 +31,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline-themes'
 
 " **** color schemes ****
 Plugin 'tpope/vim-vividchalk'
@@ -39,9 +40,9 @@ Plugin 'vim-scripts/summerfruit256.vim'
 Plugin 'vim-scripts/twilight'
 
 
-" ****************************************************************************** 
+" ******************************************************************************
 " CTRLP
-" ******************************************************************************   
+" ******************************************************************************
 
 " show hidden files
 let g:ctrlp_show_hidden = 1
@@ -55,7 +56,7 @@ nnoremap <silent> <leader>b :CtrlPBuffer<cr>
 
 " ******************************************************************************
 " NERDTREEE
-" ****************************************************************************** 
+" ******************************************************************************
 
 nnoremap <silent> <F2> :NERDTreeToggle<CR>
 
@@ -88,17 +89,24 @@ let g:syntastic_mode_map= {
 
 " toggle the mode
 nnoremap <silent> <leader>s :SyntasticToggleMode<CR>
+" ******************************************************************************
+" ULTISNIP
+" ******************************************************************************
 
-" ****************************************************************************** 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" ******************************************************************************
 " VIM-COFFEE-SCRIPT
-" ****************************************************************************** 
+" ******************************************************************************
 
 " compile CoffeeScript in a new buffer
 vnoremap <silent> <localleader>c :CoffeeCompile<CR>
 
-" ****************************************************************************** 
+" ******************************************************************************
 " VIM-GITGUTTER
-" ****************************************************************************** 
+" ******************************************************************************
 
 " start with git gutter off
 let g:gitgutter_enabled = 0
@@ -109,15 +117,16 @@ nnoremap <silent> <leader>g :GitGutterToggle<CR>
 " toggle the git gutter highlights
 nnoremap <silent> <leader>h :GitGutterLineHighlightsToggle<CR>
 
-" ****************************************************************************** 
+" ******************************************************************************
 " VIM-AIRLINE
-" ****************************************************************************** 
+" ******************************************************************************
 
 " add fancy schmancy fonts
 let g:airline_powerline_fonts=1
 
 " set the airline theme
 let g:airline_theme='simple'
+
 
 " show buffers
 let g:airline#extensions#tabline#enabled = 1
