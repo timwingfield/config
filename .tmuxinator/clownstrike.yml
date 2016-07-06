@@ -1,0 +1,10 @@
+# ~/.tmuxinator/clownstrike.yml
+# you can make as many tabs as you wish...
+
+project_name: clownstrike
+project_root: ~/Code/mandiant/fenix
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 
+  - shell: 

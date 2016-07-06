@@ -172,7 +172,10 @@ augroup END
   au BufNewFile,BufRead *.md,*.markdown setlocal spell spelllang=en_us
   au BufNewFile,BufRead *.md,*.markdown setlocal wrap
   au BufNewFile,BufRead *.md,*.markdown setlocal linebreak
+  au BufNewFile,BufRead *.md,*.markdown setlocal nolist
   au BufNewFile,BufRead *.md,*.markdown setlocal wm=2
+  au BufNewFile,BufRead *.md,*.markdown setlocal nocursorcolumn
+  au BufNewFile,BufRead *.md,*.markdown setlocal nocul
 
 " *** Maybe turn these on? ***
 " remember last position in file

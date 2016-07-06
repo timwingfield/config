@@ -1,0 +1,9 @@
+# ~/.tmuxinator/isight-connector.yml
+# you can make as many tabs as you wish...
+
+project_name: isight-connector
+project_root: ~/Code/mandiant/isight_connector
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 
