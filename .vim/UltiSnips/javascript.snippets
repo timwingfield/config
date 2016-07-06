@@ -1,0 +1,37 @@
+# JavaScript snippets for mocha
+
+snippet des "describe" b
+describe('${1:description}', () => {
+	$0
+})
+endsnippet
+
+snippet con "context" b
+context('${1:description}', () => {
+	$0
+})
+endsnippet
+
+snippet it "it" b
+it('${1:should do}', () => {
+	$0
+})
+endsnippet
+
+snippet ite "it" b
+it('${1:should do}', () => {
+	expect(${2:subject}).to.$0
+})
+endsnippet
+
+snippet ex "expect" b
+expect(${1:subject}).to.$0
+endsnippet
+
+snippet exc "expect called" b
+expect(${1:spy}.called).to.be.true$0
+endsnippet
+
+snippet excw "expect called" b
+expect(${1:spy}.calledWith(${2:param})).to.be.true$0
+endsnippet

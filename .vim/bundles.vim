@@ -94,7 +94,7 @@ nnoremap <silent> <leader>s :SyntasticToggleMode<CR>
 " ******************************************************************************
 
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " ******************************************************************************
