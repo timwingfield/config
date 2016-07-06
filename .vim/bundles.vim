@@ -3,7 +3,7 @@
 " ******************************************************************************
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'elixir-lang/vim-elixir'
@@ -38,7 +38,7 @@ Plugin 'tpope/vim-vividchalk'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'vim-scripts/summerfruit256.vim'
 Plugin 'vim-scripts/twilight'
-
+call vundle#end()
 
 " ******************************************************************************
 " CTRLP
