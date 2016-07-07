@@ -28,10 +28,62 @@ snippet ex "expect" b
 expect(${1:subject}).to.$0
 endsnippet
 
+snippet ext "expect to be true" b
+expect(${1:subject}).to.true$0
+endsnippet
+
+snippet exf "expect to be false" b
+expect(${1:subject}).to.false$0
+endsnippet
+
+snippet exeq "expect to equal" b
+expect(${1:subject}).to.eq(${2:expected})$0
+endsnippet
+
 snippet exc "expect called" b
 expect(${1:spy}.called).to.be.true$0
 endsnippet
 
 snippet excw "expect called" b
 expect(${1:spy}.calledWith(${2:param})).to.be.true$0
+endsnippet
+
+snippet react "create react component" b
+import { Component, PropTypes } from 'react'
+
+class ${1:ComponentName} extends Component {
+	constructor(props) {
+		super(props)
+	}
+
+	render() {
+		return (
+			$0
+			//all the joy and fun of React here
+		)
+	}
+}
+
+$1.propTypes = {
+	//propName: PropTypes...
+}
+
+export default $1
+endsnippet
+
+snippet mocha "create mocha test" b
+import { shallow, mount, render } from 'enzyme'
+import ${1:ComponentName} from '../../../components/${2:component_file_name}'
+
+let subject, result = null
+
+describe("$1", () => {
+	beforeEach( () => {
+		subject = mount(<$1 />)
+	})
+
+	it("should exist", () => {
+		expect(subject).to.be.defined
+	})
+})
 endsnippet
