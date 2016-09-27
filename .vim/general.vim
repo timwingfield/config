@@ -192,3 +192,15 @@ let NERDTreeShowHidden=1
 
 " have one hundred lines of command-line (etc) history:
   "set history=100
+  "
+
+" ******************************************************************************
+" PROJECT SPECIFIC THINGS
+" ******************************************************************************
+
+" allow per-project .vimrc file
+set exrc
+
+" prevent bad things in per-project .vimrc file (doesn't allow the auto
+" command)
+set secure

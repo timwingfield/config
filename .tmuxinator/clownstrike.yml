@@ -8,3 +8,5 @@ windows:
   - shell: 
   - shell: 
   - shell: 
+  - shell: sudo openconnect fevpn.fireeye.com -u timothy.wingfield
+

@@ -6,3 +6,5 @@ TAGS
 .netrwhist
 .vim/syntax/git-log.vim
 .vim/bundle
+!/**/Config/.vimrc
+.vimrc
