@@ -8,3 +8,4 @@ TAGS
 .vim/bundle
 !/**/Config/.vimrc
 .vimrc
+scratchpad
