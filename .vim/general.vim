@@ -9,10 +9,21 @@ augroup syntax
   autocmd BufNewFile,BufRead *.cjsx setfiletype coffee
 augroup end
 
-" ****************************************************************************** 
+" Allow JSX in normal JS files
+let g:jsx_ext_required = 0
+
+" Set up syntastic to use ESLint
+" Will require global install of eslint, babel-eslint, and
+"   estlint-plugin-react
+" Will require an .eslintrc file in project
+"   or a global .eslintrc file in ~
+
+let g:syntastic_javascript_checkers = ['eslint']
+
+" ******************************************************************************
 " BASICS
 "
-" ****************************************************************************** 
+" ******************************************************************************
 
 " sets shell to my shell
 set shell=sh

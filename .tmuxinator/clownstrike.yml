@@ -8,5 +8,5 @@ windows:
   - shell: 
   - shell: 
   - shell: 
-  - shell: sudo openconnect fevpn.fireeye.com -u timothy.wingfield
-
+  - shell: sudo openconnect vpneng-i.fireeye.com -u timothy.wingfield
+    # for regular vpn: sudo openconnect fevpn.fireeye.com -u timothy.wingfield
