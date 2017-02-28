@@ -66,6 +66,14 @@ nnoremap <silent> <F2> :NERDTreeToggle<CR>
 "
 " ******************************************************************************
 
+" Set up syntastic to use ESLint
+" Will require global install of eslint, babel-eslint, and
+"   estlint-plugin-react
+" Will require an .eslintrc file in project
+"   or a global .eslintrc file in ~
+
+let g:syntastic_javascript_checkers = ['eslint']
+
 " set to check files when opened
 let g:syntastic_check_on_open = 1
 
