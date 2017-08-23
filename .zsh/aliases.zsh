@@ -25,3 +25,5 @@ alias forgit='git branch -r --merged integration | grep -v origin/integration | 
 alias whoamtmate="tmate display -p '#{tmate_ssh}'"
 
 alias ctags="`brew --prefix`/bin/ctags"
+
+alias rspec="nocorrect rspec"

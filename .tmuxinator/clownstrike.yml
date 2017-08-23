@@ -8,5 +8,7 @@ windows:
   - shell: 
   - shell: 
   - shell: 
-  - shell: sudo openconnect vpneng-i.fireeye.com -u timothy.wingfield
+  - shell: sudo openconnect vpneng-east.fireeye.com -u timothy.wingfield
+    # apparently the Indian VPN - sudo openconnect vpneng-i.fireeye.com -u timothy.wingfield
+    # 
     # for regular vpn: sudo openconnect fevpn.fireeye.com -u timothy.wingfield

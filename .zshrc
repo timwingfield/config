@@ -62,3 +62,12 @@ source $(brew --prefix nvm)/nvm.sh
 # FireEye/Mandiant config
 # sets redis_vars
 export REDIS_VARS_URL=redis://config.mansfield.mandiant.com:6379/0
+
+# put Yarn in path
+export PATH="$PATH:`yarn global bin`"
+
+# go
+
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
