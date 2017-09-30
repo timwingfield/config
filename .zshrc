@@ -36,7 +36,8 @@ source ~/.zsh/functions.zsh
 export EDITOR='vim'
 
 # Set up tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+# old way, still on FireEye MBP[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+source ~/.bin/tmuxinator.zsh
 
 # configure home directory for brew-cask
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
@@ -50,7 +51,7 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-chruby 2.1.8
+chruby 2.4.1
 
 # added by travis gem
 [ -f /Volumes/Data/Users/Timbo/.travis/travis.sh ] && source /Volumes/Data/Users/Timbo/.travis/travis.sh
