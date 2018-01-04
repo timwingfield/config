@@ -1,11 +1,10 @@
-# ~/.tmuxinator/isight-ruby.yml
+# ~/.tmuxinator/griswold.yml
 # you can make as many tabs as you wish...
 
-project_name: isight-ruby
-project_root: ~/Code/mandiant/isight-ruby
+project_name: sandbox
+project_root: ~/Code/electronics/griswold
 windows:
   - editor: vim
   - shell: 
   - shell: 
   - shell: 
-

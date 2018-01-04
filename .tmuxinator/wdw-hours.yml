@@ -2,7 +2,7 @@
 # you can make as many tabs as you wish...
 
 project_name: wdw-hours
-project_root: ~/Code/projects/Disney/wdw-hours
+project_root: ~/Code/Disney/wdw-hours
 windows:
   - editor: vim
   - shell:
