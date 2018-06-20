@@ -27,3 +27,4 @@ alias whoamtmate="tmate display -p '#{tmate_ssh}'"
 alias ctags="`brew --prefix`/bin/ctags"
 
 alias rspec="nocorrect rspec"
+alias bundle="nocorrect bundle"
