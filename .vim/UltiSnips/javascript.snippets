@@ -61,7 +61,8 @@ expect(${1:spy}.calledWith(${2:param})).to.be.true$0
 endsnippet
 
 snippet react "create react component" b
-import { Component, PropTypes } from 'react'
+import { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class ${1:ComponentName} extends Component {
 	constructor(props) {
@@ -91,11 +92,11 @@ let subject, result = null
 
 describe("$1", () => {
 	beforeEach( () => {
-		subject = mount(<$1 />)
+		subject = shallow(<$1 />)
 	})
 
 	it("should exist", () => {
-		expect(subject).to.be.defined
+		expect(subject).to.not.be.undefined
 	})
 })
 endsnippet

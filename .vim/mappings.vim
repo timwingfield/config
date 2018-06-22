@@ -32,7 +32,8 @@ inoremap jk <Esc>
 " VIM-TEST
 " ******************************************************************************
 
-let g:test#strategy = 'vimux'
+"let g:test#strategy = 'vimux'
+"let g:test#strategy = 'dispatch'
 nnoremap <leader>n :wa<cr> :TestNearest<CR>
 nnoremap <leader>f :wa<cr> :TestFile<CR>
 nnoremap <leader>a :wa<cr> :TestSuite<CR>
