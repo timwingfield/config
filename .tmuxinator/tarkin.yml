@@ -1,10 +1,9 @@
-# ~/.tmuxinator/sandbox.yml
+# ~/.tmuxinator/tarkin.yml
 # you can make as many tabs as you wish...
 
-project_name: sandbox
-project_root: ~/Code/sandbox
+project_name: tarkin
+project_root: ~/Code/electronics/tarkin
 windows:
   - editor: vim
-  - shell: 
   - shell: 
   - shell: 

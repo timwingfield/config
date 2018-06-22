@@ -1,0 +1,10 @@
+# ~/.tmuxinator/wazowski.yml
+# you can make as many tabs as you wish...
+
+project_name: wazowski
+project_root: ~/Code/electronics/wazowski
+windows:
+  - editor: vim
+  - shell:
+  - server:
+  - specs:

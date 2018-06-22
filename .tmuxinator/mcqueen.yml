@@ -1,0 +1,10 @@
+# ~/.tmuxinator/mcqueen.yml
+# you can make as many tabs as you wish...
+
+project_name: mcqueen
+project_root: ~/Code/Disney/mcqueen
+windows:
+  - editor: vim
+  - shell:
+  - server:
+  - specs:

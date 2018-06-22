@@ -1,0 +1,10 @@
+# ~/.tmuxinator/mater.yml
+# you can make as many tabs as you wish...
+
+project_name: mater
+project_root: ~/Code/Disney/mater
+windows:
+  - editor: vim
+  - shell:
+  - server:
+  - specs:

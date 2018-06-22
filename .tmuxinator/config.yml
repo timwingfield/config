@@ -4,5 +4,5 @@
 project_name: config
 project_root: ~/Code/config
 windows:
-  editor: - vim
-  shell:
+  - editor: vim
+  - shell:
