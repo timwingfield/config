@@ -1,0 +1,11 @@
+# ~/.tmuxinator/terrigenesis.yml
+# you can make as many tabs as you wish...
+
+project_name: terrigenesis
+project_root: ~/Code/mandiant/terrigenesis
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 
+  - shell: 
+
