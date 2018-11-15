@@ -1,0 +1,11 @@
+# ~/.tmuxinator/tar-ruby.yml
+# you can make as many tabs as you wish...
+
+project_name: tar-ruby
+project_root: ~/Code/mandiant/tar-ruby
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 
+  - shell: 
+
