@@ -1,0 +1,11 @@
+# ~/.tmuxinator/bingo-ruby.yml
+# you can make as many tabs as you wish...
+
+project_name: bingo-ruby
+project_root: ~/Code/mandiant/bingo-ruby
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 
+  - shell: 
+

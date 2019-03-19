@@ -1,0 +1,11 @@
+# ~/.tmuxinator/fenixjs.yml
+# you can make as many tabs as you wish...
+
+project_name: fenixjs
+project_root: ~/Code/mandiant/fenixjs
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 
+  - shell: 
+

@@ -1,0 +1,11 @@
+# ~/.tmuxinator/fabric-react.yml
+# you can make as many tabs as you wish...
+
+project_name: fabric-react
+project_root: ~/Code/mandiant/fe-fabricv2-react
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 
+  - shell: 
+

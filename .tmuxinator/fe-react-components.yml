@@ -1,0 +1,11 @@
+# ~/.tmuxinator/fe-react-components.yml
+# you can make as many tabs as you wish...
+
+project_name: FE Components
+project_root: ~/Code/mandiant/fe-alert-react-components
+windows:
+  - editor: vim
+  - shell: 
+  - shell: 
+  - shell: 
+
