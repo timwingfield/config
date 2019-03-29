@@ -28,3 +28,4 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 alias rspec="nocorrect rspec"
 alias bundle="nocorrect bundle"
+alias storybook="nocorrect storybook"

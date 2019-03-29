@@ -61,8 +61,9 @@ expect(${1:spy}.calledWith(${2:param})).to.be.true$0
 endsnippet
 
 snippet react "create react component" b
-import { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 class ${1:ComponentName} extends Component {
 	constructor(props) {
@@ -73,7 +74,7 @@ class ${1:ComponentName} extends Component {
 		return (
 			$0
 			//all the joy and fun of React here
-		)
+		);
 	}
 }
 
@@ -97,6 +98,35 @@ describe("$1", () => {
 
 	it("should exist", () => {
 		expect(subject).to.not.be.undefined
+	})
+})
+endsnippet
+
+snippet jest "create jest test" b
+import renderer from 'react-test-renderer';
+import ${1:ComponentName} from './${2:componentFileName}';
+
+let subject, props, instance, Component, result = null
+
+const shallowed = () => {
+	if (!subject) {
+		subject = shallow(<Component {...props} />)
+		instance = subject.instance()
+	}
+
+	return subject
+}
+
+describe("$1", () => {
+	beforeEach( () => {
+		Component = $1
+		subject = null
+		instance = null
+		props = {}
+	})
+
+	it("should exist", () => {
+		expect(subject).toBeDefined()
 	})
 })
 endsnippet

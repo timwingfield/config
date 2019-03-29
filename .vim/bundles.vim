@@ -34,6 +34,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 
 " **** color schemes ****
 Plugin 'tpope/vim-vividchalk'
@@ -41,6 +42,57 @@ Plugin 'Lokaltog/vim-distinguished'
 Plugin 'vim-scripts/summerfruit256.vim'
 Plugin 'vim-scripts/twilight'
 call vundle#end()
+
+
+" ******************************************************************************
+" ALE
+" ******************************************************************************
+
+" add sign column emoticons
+let g:ale_sign_warning = "\u279c"
+let g:ale_sign_error = "\u2718"
+
+" message format
+let g:ale_echo_msg_format = '[%linter%]: %s ( %severity% )'
+
+" autofix
+let g:ale_fix_on_save = 1
+
+" ale fixers
+let g:ale_fixers = {
+      \  '*': [
+      \   'remove_trailing_lines',
+      \   'trim_whitespace',
+      \  ],
+      \  'elixir': [
+      \   'mix_format',
+      \  ],
+      \  'javascript': [
+      \   'eslint',
+      \  ],
+      \  'javascript.jsx': [
+      \   'eslint',
+      \  ],
+      \  'ruby': [
+      \   'rubocop',
+      \  ],
+      \}
+
+" ale colors for highlights
+augroup ale_highlights
+  autocmd!
+  autocmd ColorScheme * highlight ALEError ctermbg=88
+  autocmd ColorScheme * highlight ALEErrorSign ctermfg=196
+  autocmd ColorScheme * highlight ALEWarning ctermbg=8
+  autocmd ColorScheme * highlight ALEWarningSign ctermfg=226
+augroup end
+
+" ale linting configuration
+let g:ale_lint_on_enter = 0
+
+" add a mapping for completion
+imap <C-_> <Plug>(ale_complete)
+
 
 " ******************************************************************************
 " CTRLP
