@@ -50,7 +50,7 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-chruby 2.1.8
+chruby 2.6.2
 
 # added by travis gem
 [ -f /Volumes/Data/Users/Timbo/.travis/travis.sh ] && source /Volumes/Data/Users/Timbo/.travis/travis.sh
