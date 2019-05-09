@@ -98,6 +98,19 @@ imap <C-_> <Plug>(ale_complete)
 " CTRLP
 " ******************************************************************************
 
+" The Sivler Searcher
+
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " use ag in CtrlP for listing files. Fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't ened to cache
+  let g:crtlrp_use_caching = 0
+endif
+
 " show hidden files
 let g:ctrlp_show_hidden = 1
 

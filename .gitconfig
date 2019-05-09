@@ -44,13 +44,15 @@
   br = branch
   ch = cherry -v origin
   mine = log --author=Tim
-  spull = !git svn fetch && git svn rebase
-  spush = !git svn dcommit
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
   # Mark a repo as trusted
   trust = "!mkdir -p .git/safe"
+  # Clean up local branches that have been merged
+  # clean = branch --merged | grep -v '\*\|master\|develop' | xargs -n 1 git branch -d
+  # Clean up remote branches that have been merged
+  # cleanremote = branch -r --merged | grep -v '\*\|master\|develop' | sed 's/origin\///' | xargs -n 1 git push --delete origin
 [github]
   user = timwingfield
   token = d3578984cad0594ff05530bb188061be

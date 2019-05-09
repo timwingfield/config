@@ -1,0 +1,10 @@
+# ~/.tmuxinator/fabric-angular.yml
+# you can make as many tabs as you wish...
+
+project_name: fabric-angular
+project_root: ~/Code/mandiant/fe-fabricv2-angular
+windows:
+  - editor: vim
+  - shell:
+  - shell:
+  - shell:
