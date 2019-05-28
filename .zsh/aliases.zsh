@@ -31,3 +31,6 @@ alias bundle="nocorrect bundle"
 alias storybook="nocorrect storybook"
 
 alias mux="tmuxinator"
+
+alias vpneast="sudo openconnect -u timothy.wingfield vpneng-east.fireeye.com"
+alias vpnwest="sudo openconnect -u timothy.wingfield vpneng-i.fireeye.com"

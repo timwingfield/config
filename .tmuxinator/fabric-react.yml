@@ -5,7 +5,7 @@ project_name: fabric-react
 project_root: ~/Code/mandiant/fe-fabricv2-react
 windows:
   - editor: vim
-  - shell: 
-  - shell: 
-  - shell: 
-
+  - shell:
+  - shell:
+  - shell:
+  - shell: sudo openconnect -u timothy.wingfield vpneng-east.fireeye.com

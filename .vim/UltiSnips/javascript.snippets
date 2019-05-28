@@ -103,14 +103,24 @@ describe("$1", () => {
 endsnippet
 
 snippet jest "create jest test" b
-import renderer from 'react-test-renderer';
+import React from 'react'
+import { shallow, render } from 'enzyme'
 import ${1:ComponentName} from './${2:componentFileName}';
 
-let subject, props, instance, Component, result = null
+let subject, props, children, instance, Component, result = null
 
 const shallowed = () => {
 	if (!subject) {
-		subject = shallow(<Component {...props} />)
+		subject = shallow(<Component {...props}>{ children }</Component>)
+		instance = subject.instance()
+	}
+
+	return subject
+}
+
+const rendered = () => {
+	if (!subject) {
+		subject = render(<Component {...props}>{ children }</Component>)
 		instance = subject.instance()
 	}
 
@@ -123,6 +133,7 @@ describe("$1", () => {
 		subject = null
 		instance = null
 		props = {}
+		children = null
 	})
 
 	it("should exist", () => {

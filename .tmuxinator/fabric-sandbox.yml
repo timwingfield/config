@@ -1,0 +1,10 @@
+# ~/.tmuxinator/fabric-sandbox.yml
+# you can make as many tabs as you wish...
+
+project_name: fabric-sandbox
+project_root: ~/Code/mandiant/fabric-sandbox
+windows:
+  - editor: vim
+  - shell:
+  - shell:
+  - shell:

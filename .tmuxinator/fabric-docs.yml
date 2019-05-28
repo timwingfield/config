@@ -1,0 +1,10 @@
+# ~/.tmuxinator/fabric-docs.yml
+# you can make as many tabs as you wish...
+
+project_name: fabric-docs
+project_root: ~/Code/mandiant/fabric-documentation
+windows:
+  - editor: vim
+  - shell:
+  - shell:
+  - shell:
