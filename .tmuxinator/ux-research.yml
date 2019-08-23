@@ -1,0 +1,11 @@
+# ~/.tmuxinator/ux-research.yml
+# you can make as many tabs as you wish...
+
+project_name: ux-research
+project_root: ~/Code/mandiant/ux-research
+windows:
+  - editor: vim
+  - shell:
+  - shell:
+  - shell:
+  - shell: sudo openconnect -u timothy.wingfield vpneng-east.fireeye.com

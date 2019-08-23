@@ -1,9 +1,0 @@
-# ~/.tmuxinator/transmutation.yml
-# you can make as many tabs as you wish...
-
-project_name: transmutation 
-project_root: ~/Code/mandiant/transmutation
-windows:
-  - editor: vim
-  - shell: 
-  - shell: 

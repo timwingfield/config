@@ -1,9 +1,0 @@
-# ~/.tmuxinator/saul.yml
-# you can make as many tabs as you wish...
-
-project_name: ios 
-project_root: ~/Code/iOS Projects
-windows:
-  - editor: vim
-  - shell: 
-  - specs: 

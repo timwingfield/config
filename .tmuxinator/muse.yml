@@ -1,0 +1,11 @@
+# ~/.tmuxinator/muse.yml
+# you can make as many tabs as you wish...
+
+project_name: muse
+project_root: ~/Code/mandiant/muse
+windows:
+  - editor: vim
+  - shell:
+  - shell:
+  - shell:
+  - shell: sudo openconnect -u timothy.wingfield vpneng-east.fireeye.com

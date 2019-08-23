@@ -1,9 +1,0 @@
-# ~/.tmuxinator/ionic-dev.yml
-# you can make as many tabs as you wish...
-
-project_name: ionic-dev 
-project_root: ~/Code/mobile
-windows:
-  - editor: vim
-  - shell: 
-  - shell: 
