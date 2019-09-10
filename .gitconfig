@@ -47,6 +47,7 @@
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
+  yoda = push --force
   # Mark a repo as trusted
   trust = "!mkdir -p .git/safe"
   # Clean up local branches that have been merged
