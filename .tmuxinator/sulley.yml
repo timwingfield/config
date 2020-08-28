@@ -1,0 +1,12 @@
+# ~/.tmuxinator/sulley.yml
+# you can make as many tabs as you wish...
+#
+# Sulley - Node express project to connect to the themeparks.js library
+
+project_name: sulley 
+project_root: ~/Code/Disney/sulley
+windows:
+  - editor: vim
+  - shell:
+  - server:
+  - specs:

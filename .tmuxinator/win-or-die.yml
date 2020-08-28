@@ -1,0 +1,12 @@
+# ~/.tmuxinator/win-or-die.yml
+# you can make as many tabs as you wish...
+#
+# win-or-die - React project for my "Testing React with Mocha presentation"
+
+project_name: win-or-die 
+project_root: ~/Code/sandbox/win-or-die
+windows:
+  - editor: vim
+  - shell:
+  - server:
+  - specs:

@@ -1,8 +1,8 @@
-# ~/.tmuxinator/wdw-hours.yml
+# ~/.tmuxinator/timon.yml
 # you can make as many tabs as you wish...
 
-project_name: wdw-hours
-project_root: ~/Code/Disney/wdw-hours
+project_name: timon
+project_root: ~/Code/Disney/timon
 windows:
   - editor: vim
   - shell:

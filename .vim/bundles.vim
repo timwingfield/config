@@ -40,6 +40,9 @@ Plugin 'tpope/vim-vividchalk'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'vim-scripts/summerfruit256.vim'
 Plugin 'vim-scripts/twilight'
+Plugin 'nightsense/snow'
+Plugin 'schickele/vim'
+
 call vundle#end()
 
 " ******************************************************************************
