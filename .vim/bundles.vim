@@ -11,10 +11,10 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
 Plugin 'gmarik/vundle'
 Plugin 'godlygeek/tabular'
+Plugin 'heavenshell/vim-jsdoc'
 Plugin 'honza/vim-snippets'
 Plugin 'janko-m/vim-test'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -130,6 +130,19 @@ nnoremap <silent> <leader>b :CtrlPBuffer<cr>
 nnoremap <silent> <F2> :NERDTreeToggle<CR>
 
 " ******************************************************************************
+" VIM-JAVASCRIPT
+" ******************************************************************************
+
+let g:javascript_plugin_jsdoc = 1
+
+" ******************************************************************************
+" VIM-JAVASCRIPT
+" ******************************************************************************
+
+nnoremap <silent> <leader>j :JsDoc<CR>
+
+
+" ******************************************************************************
 " SYNTASTIC
 "
 " ******************************************************************************
@@ -173,13 +186,6 @@ nnoremap <silent> <leader>s :SyntasticToggleMode<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-" ******************************************************************************
-" VIM-COFFEE-SCRIPT
-" ******************************************************************************
-
-" compile CoffeeScript in a new buffer
-vnoremap <silent> <localleader>c :CoffeeCompile<CR>
 
 " ******************************************************************************
 " VIM-GITGUTTER

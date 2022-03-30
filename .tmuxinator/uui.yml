@@ -1,0 +1,10 @@
+# ~/.tmuxinator/uui.yml
+# you can make as many tabs as you wish...
+
+project_name: Unified-UI
+project_root: ~/Code/mandiant/Unified-UI
+windows:
+  - editor: vim
+  - shell:
+  - shell:
+  - shell:

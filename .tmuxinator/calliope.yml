@@ -1,0 +1,10 @@
+# ~/.tmuxinator/calliope.yml
+# you can make as many tabs as you wish...
+
+project_name: calliope
+project_root: ~/Code/mandiant/Calliope
+windows:
+  - editor: vim
+  - shell:
+  - shell:
+  - shell:
