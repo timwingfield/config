@@ -29,8 +29,6 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias rspec="nocorrect rspec"
 alias bundle="nocorrect bundle"
 alias storybook="nocorrect storybook"
+alias yarn storybook="nocorrect yarn storybook"
 
 alias mux="tmuxinator"
-
-alias vpneast="sudo openconnect -u timothy.wingfield vpneng-east.fireeye.com"
-alias vpnwest="sudo openconnect -u timothy.wingfield vpneng-i.fireeye.com"
