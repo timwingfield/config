@@ -1,0 +1,10 @@
+# ~/.tmuxinator/beulah.yml
+# you can make as many tabs as you wish...
+
+project_name: beulah
+project_root: ~/Code/beulah
+windows:
+  - editor: vim
+  - shell:
+  - server:
+  - specs:

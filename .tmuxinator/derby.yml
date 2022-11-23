@@ -1,0 +1,10 @@
+# ~/.tmuxinator/derby.yml
+# you can make as many tabs as you wish...
+
+project_name: derby
+project_root: ~/Code/derby
+windows:
+  - editor: vim
+  - shell:
+  - server:
+  - specs:
