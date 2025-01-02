@@ -48,10 +48,6 @@ export PATH=/usr/local/bin:$PATH
 # put postgres.app in the path
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
-chruby 3.1.2
 
 # added by travis gem
 [ -f /Volumes/Data/Users/Timbo/.travis/travis.sh ] && source /Volumes/Data/Users/Timbo/.travis/travis.sh

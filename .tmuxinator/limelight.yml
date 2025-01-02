@@ -1,0 +1,9 @@
+# ~/.tmuxinator/limelight.yml
+# you can make as many tabs as you wish...
+
+project_name: limelight
+project_root: ~/Code/limelight
+windows:
+  - editor: vim
+  - shell:
+  - shell:
