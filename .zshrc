@@ -48,6 +48,9 @@ export PATH=/usr/local/bin:$PATH
 # put postgres.app in the path
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
+# Initialize rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
 
 # added by travis gem
 [ -f /Volumes/Data/Users/Timbo/.travis/travis.sh ] && source /Volumes/Data/Users/Timbo/.travis/travis.sh
