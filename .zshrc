@@ -43,7 +43,7 @@ source ~/.bin/tmuxinator.zsh
 export HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
 
-export PATH=/usr/local/bin:$PATH
+# export PATH=/usr/local/bin:$PATH
 
 # put postgres.app in the path
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
@@ -66,8 +66,5 @@ export REDIS_VARS_URL=redis://config.mansfield.mandiant.com:6379/0
 # put Yarn in path
 export PATH="$PATH:`yarn global bin`"
 
-# go
-
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# Created by `pipx` on 2025-02-17 19:29:07
+# export PATH="$PATH:/Users/tim/.local/bin"
