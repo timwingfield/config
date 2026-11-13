@@ -1,9 +1,0 @@
-# ~/.tmuxinator/elixir.yml
-# you can make as many tabs as you wish...
-
-project_name: elixir
-project_root: ~/Code/sandbox/elixir
-windows:
-  - editor: vim
-  - shell: 
-  - shell: 

@@ -1,70 +1,84 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="timwingfield"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby bundler)
-
-source $ZSH/oh-my-zsh.sh
-source ~/.profile
-source ~/.zsh/aliases.zsh
-source ~/.zsh/functions.zsh
-
-# Customize to your needs...
+# Homebrew env (PATH, MANPATH, etc.) lives in ~/.zprofile via `brew shellenv`
 
 export EDITOR='vim'
 
-# Set up tmuxinator
-# old way, still on FireEye MBP[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-source ~/.bin/tmuxinator.zsh
+# ******************************************************************************
+# HISTORY
+# ******************************************************************************
 
-# configure home directory for brew-cask
-export HOMEBREW_CASK_OPTS='--appdir=/Applications'
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt extended_history hist_ignore_dups hist_ignore_space hist_verify share_history
 
+# ******************************************************************************
+# OPTIONS
+# ******************************************************************************
 
-# export PATH=/usr/local/bin:$PATH
+setopt auto_cd auto_pushd pushd_ignore_dups interactive_comments
+setopt correct
 
-# put postgres.app in the path
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+# ******************************************************************************
+# COMPLETION
+# ******************************************************************************
 
-# Initialize rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-# added by travis gem
-[ -f /Volumes/Data/Users/Timbo/.travis/travis.sh ] && source /Volumes/Data/Users/Timbo/.travis/travis.sh
+# ******************************************************************************
+# KEYS
+# ******************************************************************************
 
-# adds nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+bindkey -e
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
 
-# FireEye/Mandiant config
-# sets redis_vars
-export REDIS_VARS_URL=redis://config.mansfield.mandiant.com:6379/0
+# ******************************************************************************
+# PROMPT
+#
+# » dir/subdir [branch ✔]:
+# ******************************************************************************
 
-# put Yarn in path
-export PATH="$PATH:`yarn global bin`"
+autoload -Uz colors vcs_info && colors
+setopt prompt_subst
 
-# Created by `pipx` on 2025-02-17 19:29:07
-# export PATH="$PATH:/Users/tim/.local/bin"
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' unstagedstr '*'
+zstyle ':vcs_info:git:*' stagedstr '*'
+zstyle ':vcs_info:git:*' formats '%b' '%c%u'
+zstyle ':vcs_info:git:*' actionformats '%b|%a' '%c%u'
+
+function _prompt_vcs_info() {
+  vcs_info
+  GIT_PROMPT=''
+  [[ -z $vcs_info_msg_0_ ]] && return
+  if [[ -n $vcs_info_msg_1_ ]]; then
+    GIT_PROMPT=" %F{green}[$vcs_info_msg_0_ %F{red}%B⚡%b%F{green}]%f"
+  else
+    GIT_PROMPT=" %F{green}[$vcs_info_msg_0_ ✔]%f"
+  fi
+}
+precmd_functions+=(_prompt_vcs_info)
+
+PROMPT='%F{blue}» %F{cyan}%2c%f${GIT_PROMPT}: '
+
+ls -G >/dev/null 2>&1 && export CLICOLOR=1
+
+# ******************************************************************************
+# TOOLS
+# ******************************************************************************
+
+# mise manages ruby/node versions (reads .ruby-version, .nvmrc, .tool-versions)
+command -v mise >/dev/null && eval "$(mise activate zsh)"
+
+# pipx and other user-installed binaries
+export PATH="$HOME/.local/bin:$PATH"
+
+source ~/.zsh/aliases.zsh
+source ~/.zsh/functions.zsh

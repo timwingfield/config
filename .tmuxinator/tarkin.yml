@@ -1,9 +1,0 @@
-# ~/.tmuxinator/tarkin.yml
-# you can make as many tabs as you wish...
-
-project_name: tarkin
-project_root: ~/Code/electronics/tarkin
-windows:
-  - editor: vim
-  - shell: 
-  - shell: 

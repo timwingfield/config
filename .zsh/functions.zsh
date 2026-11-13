@@ -17,8 +17,8 @@ function add_trusted_local_bin_to_path() {
   fi
 }
 
-# Make sure add_trusted_local_bin_to_path runs after chruby so we
-# prepend the default chruby gem paths
+# Make sure add_trusted_local_bin_to_path runs after mise so we
+# prepend the mise-managed ruby paths
 if [[ -n "$ZSH_VERSION"  ]]; then
   if [[ ! "$preexec_functions" == *add_trusted_local_bin_to_path*  ]]; then
   preexec_functions+=("add_trusted_local_bin_to_path")
