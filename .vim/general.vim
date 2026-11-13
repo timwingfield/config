@@ -4,13 +4,8 @@
 
 augroup syntax 
   autocmd!
-  autocmd BufNewFile,BufRead *.json setfiletype javascript
-  autocmd BufNewFile,BufRead {Gemfile,Guardfile,*.rabl} setfiletype ruby
-  autocmd BufNewFile,BufRead *.cjsx setfiletype coffee
+  autocmd BufNewFile,BufRead {Guardfile,*.rabl} setfiletype ruby
 augroup end
-
-" Allow JSX in normal JS files
-let g:jsx_ext_required = 0
 
 " ******************************************************************************
 " BASICS
@@ -111,13 +106,11 @@ set wildignore=*.o,*.obj,*~,node_modules
 
 " ******************************************************************************
 " CURSOR
-"
-" OSX iTerm2 Specific
 " ******************************************************************************
 
-" change the cursor shape in edit mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" bar cursor in insert mode, block otherwise
+let &t_SI = "\<Esc>[6 q"
+let &t_EI = "\<Esc>[2 q"
 
 " ******************************************************************************   
 " SEARCH
@@ -165,12 +158,6 @@ augroup mkd
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
-augroup markdown
-  au! BufRead,BufNewFile *.mkd   setfiletype mkd
-  au! BufRead,BufNewFile *.md   setfiletype mkd
-  au! BufRead,BufNewFile *.markdown   setfiletype mkd
-augroup END
-
 " turn spell check on for markdown files
   au BufNewFile,BufRead *.md,*.markdown setlocal spell spelllang=en_us
   au BufNewFile,BufRead *.md,*.markdown setlocal wrap
@@ -183,9 +170,6 @@ augroup END
 " *** Maybe turn these on? ***
 " remember last position in file
   "au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-
-" turn on javascript colors for a json file
-  "autocmd BufNewFile,BufRead *.json set ft=javascript
 
 " have NERDTree show hidden files by default
 let NERDTreeShowHidden=1
