@@ -1,35 +1,16 @@
 # My config files
-Thanks to the good folks at Edgecase for this config set up. I have removed a bunch of things they have that I don't
-use, but the Edgecase set up was definitely the starting point.
+
+Originally based on the EdgeCase config set up.
 
 ## Setup
 
-The following rake tasks will set up symbolic links in your home directory for each of the included configuration files.
+    brew install git vim mise the_silver_searcher
+    rake                      # symlink each dotfile into ~
+    mise use -g ruby@3.4      # ruby (and node) versions via mise
+    vim +PluginInstall +qall  # install vim plugins with Vundle
 
-    rake symlink
+Vundle itself needs to be cloned first:
 
-or 
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-    rake symlink:force
-
-## Windows
-
-The following rake task will tweak a few of the default configs to better behave on Windows
-
-    rake windows
-=======
-# Setup
-
-## Personal Usage
-
-Aside from .gitconfig, this configuration is not specific to EdgeCase pairing machines.  To use on your personal machine, run the following rake task:
-
-    rake symlink:force
-
-This will forcefully create symlinks for all included configuration files *except* .gitconfig.  If you do not want existing config files to be overwritten, use:
-
-    rake symlink
-
-## Emacs
-
-http://github.com/jimweirich/emacs-setup/tree/master
+Homebrew's environment is set in `~/.zprofile` (`eval "$(/opt/homebrew/bin/brew shellenv)"`).

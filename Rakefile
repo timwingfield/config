@@ -3,7 +3,7 @@ require 'rake'
 
 desc "create symbolic links to each config file"
 task :default do
-  files = Dir.glob('.*') - ['.git', '.gitmodules', '.DS_Store', '.', '..']
+  files = Dir.glob('.*') - ['.git', '.gitignore', '.DS_Store', '.', '..']
 
   files.each do |file|
     link_file(file)
