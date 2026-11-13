@@ -1,10 +1,8 @@
 [user]
-	name = Tim Wingfield
+  name = Tim Wingfield
   email = tim@timwingfield.com
 [color]
-  branch = auto
-  diff = auto
-  status = auto
+  ui = auto
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -19,22 +17,14 @@
   changed = green
   untracked = cyan
 [merge]
-	tool = custom
+  tool = vimdiff
+  conflictstyle = zdiff3
+[mergetool]
   keepBackup = false
-[mergetool "custom"]
-  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$PWD/$BASE" "$PWD/$LOCAL" "$PWD/$REMOTE" "$PWD/$MERGED"
-  trustExitCode = false
-  keepTemporaries = false
-  keepBackup = false
-[difftool]
-  external = p4diff
 [core]
   autocrlf = input
-  legacyheaders = false
-	editor = vim
-	excludesfile = /Users/timothy.wingfield/.gitignore_global
-[repack]
-  usedeltabaseoffset = true
+  editor = vim
+  excludesfile = ~/.gitignore_global
 [branch]
   autosetuprebase = always
 [alias]
@@ -44,8 +34,6 @@
   br = branch
   ch = cherry -v origin
   mine = log --author=Tim
-  spull = !git svn fetch && git svn rebase
-  spush = !git svn dcommit
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
@@ -53,12 +41,14 @@
   trust = "!mkdir -p .git/safe"
 [github]
   user = timwingfield
-  token = d3578984cad0594ff05530bb188061be
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [push]
-	default = current
+  default = current
+  autoSetupRemote = true
+[fetch]
+  prune = true
 [rerere]
   enabled = true
 [init]
-	defaultBranch = trunk
+  defaultBranch = trunk

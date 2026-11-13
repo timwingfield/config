@@ -1,11 +1,7 @@
 .DS_Store
-.DS_Store?
-Thumbs.db
 tags
 TAGS
 .netrwhist
-.vim/syntax/git-log.vim
-.vim/bundle
-!/**/Config/.vimrc
-.vimrc
 scratchpad
+.vimrc
+!/**/config/.vimrc
